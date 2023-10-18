@@ -1,4 +1,4 @@
-source /home/ldai8/bash/.condarc_data
+source /home/yuke/lyd/conda.sh
 conda activate pytorchNCCL
 
 # export $PROTOCOL=RDMA/tcpip/ipoib
@@ -33,7 +33,7 @@ export GLOBAL_BATCH_SIZE_T5=24
 
 
 
-cd /home/ldai8/software/Megatron-LM
+cd /home/yuke/lyd/Megatron-LM
 
 
 
@@ -42,7 +42,7 @@ cd /home/ldai8/software/Megatron-LM
 rm -rf ./checkpoints/
 
 
-export GPUS_PER_NODE=2
+export GPUS_PER_NODE=4
 
 export NCCL_DEBUG=INFO 
 
@@ -50,37 +50,37 @@ export NNODES=1
 
 export MODEL_PARALLEL_SIZE=2
 
-export directory="/home/ldai8/bash/Megatron_data_output_profile/${MODEL}/${MODEL_PARALLEL_SIZE}gpus-mbs${MICRO_BATCH_SIZE_BERT}"
+# export directory="/home/ldai8/bash/Megatron_data_output_profile/${MODEL}/${MODEL_PARALLEL_SIZE}gpus-mbs${MICRO_BATCH_SIZE_BERT}"
 
-if [ ! -d "$directory" ]; then
-    mkdir -p "$directory/tcpip" "$directory/ipoib" "$directory/RDMA"
-    echo "Directory created."
-else
-    echo "Directory already exists."
-fi
+# if [ ! -d "$directory" ]; then
+#     mkdir -p "$directory/tcpip" "$directory/ipoib" "$directory/RDMA"
+#     echo "Directory created."
+# else
+#     echo "Directory already exists."
+# fi
 
 
 export WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 
 
 if [ "$MODEL" = "gpt2" ]; then
-    export CHECKPOINT_PATH=/home/ldai8/software/Megatron-LM/checkpoints/gpt2_345m
-	export VOCAB_FILE=/home/ldai8/software/Megatron-LM/model/gpt2-vocab.json
-	export MERGE_FILE=/home/ldai8/software/Megatron-LM/model/gpt2-merges.txt
-	export DATA_PATH=/home/ldai8/software/Megatron-LM/my-gpt2_text_document 
+    export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/gpt2_345m
+	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json
+	export MERGE_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt
+	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-gpt2_text_document 
 elif [ "$MODEL" = "bert" ]; then
-    export CHECKPOINT_PATH=/home/ldai8/software/Megatron-LM/checkpoints/bert_345m
-	export VOCAB_FILE=/home/ldai8/software/Megatron-LM/model/bert-large-cased-vocab.txt
-	export DATA_PATH=/home/ldai8/software/Megatron-LM/my-bert_text_sentence
+    export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/bert_345m
+	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
+	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-bert_text_sentence
 elif [ "$MODEL" = "gpt2large" ]; then
-   export CHECKPOINT_PATH=/home/ldai8/software/Megatron-LM/checkpoints/gpt2_774m
-	export VOCAB_FILE=/home/ldai8/software/Megatron-LM/model/gpt2-vocab.json
-	export MERGE_FILE=/home/ldai8/software/Megatron-LM/model/gpt2-merges.txt
-	export DATA_PATH=/home/ldai8/software/Megatron-LM/my-gpt2_text_document  
+   export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/gpt2_774m
+	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json
+	export MERGE_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt
+	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-gpt2_text_document  
 else
-    export CHECKPOINT_PATH=/home/ldai8/software/Megatron-LM/checkpoints/t5_base
-	export VOCAB_FILE=/home/ldai8/software/Megatron-LM/model/bert-large-cased-vocab.txt
-	export DATA_PATH=/home/ldai8/software/Megatron-LM/my-t5_text_sentence
+    export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/t5_base
+	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
+	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-t5_text_sentence
 fi
 
 
