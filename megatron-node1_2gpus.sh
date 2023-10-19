@@ -84,13 +84,21 @@ else
 fi
 
 
+hostname -I
 
+# # notes for hostname tests
+# hsn0 10.201.2.27 ### 100gbps (ib_send_bw 10.201.2.27)
+# hsn1 10.201.2.7 ### 100gbps
+# bond0 10.140.57.108 ### 100gbps
 
+# hostname -I: all ip address ### 10.140.57.108 10.201.2.7 10.201.2.27
 
+HOSTNAME = $(hostname -I | awk '{print $NF}')
+echo $HOSTNAME
 
 if [ "$PROTOCOL" = "RDMA" ]; then
-    export MASTER_ADDR="10.3.1.153"
-	export NCCL_SOCKET_IFNAME=ib0
+    export MASTER_ADDR=$HOSTNAME
+	export NCCL_SOCKET_IFNAME=hsn0
 	export NCCL_NET=IB
 elif [ "$PROTOCOL" = "ipoib" ]; then
     export MASTER_ADDR="10.3.1.153"
@@ -148,13 +156,13 @@ if [ "$MODEL" = "gpt2" ]; then
 	--log-interval 10 --save-interval 500 --eval-interval 100 --eval-iters 10 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
 	--data-path $DATA_PATH > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/2gpus-mbs${MICRO_BATCH_SIZE_GPT2}/${PROTOCOL}/${MODEL}-${PROTOCOL}-2gpus-${NODE_RANK}-mbs-${MICRO_BATCH_SIZE_GPT2}.out
 elif [ "$MODEL" = "bert" ]; then
-    /home/ldai8/data/conda3/envs/pytorchNCCL/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
+    /home/yuke/lyd/conda3/envs/pytorchNCCL/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
 	--num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
 	--lr 0.0001 --lr-decay-iters 495 --train-iters 1000 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
 	--micro-batch-size $MICRO_BATCH_SIZE_BERT --global-batch-size $GLOBAL_BATCH_SIZE_BERT \
 	--vocab-file $VOCAB_FILE --split 949,50,1 --fp16 --log-interval 10 --save-interval 500 --eval-interval 100 --eval-iters 10 --recompute-method uniform \
 	--save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-	--data-path $DATA_PATH > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/2gpus-mbs${MICRO_BATCH_SIZE_BERT}/${PROTOCOL}/${MODEL}-${PROTOCOL}-2gpus-${NODE_RANK}-mbs-${MICRO_BATCH_SIZE_BERT}.out
+	--data-path $DATA_PATH 
 elif [ "$MODEL" = "gpt2large" ]; then
     /home/ldai8/data/conda3/envs/pytorchNCCL/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
 	--num-layers 36 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
