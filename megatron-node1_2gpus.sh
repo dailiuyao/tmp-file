@@ -1,3 +1,17 @@
+#!/bin/bash -l
+#PBS -l select=1:system=polaris
+#PBS -l place=scatter
+#PBS -l walltime=00:29:59
+#PBS -q debug
+#PBS -l filesystems=home
+#PBS -A CSC250STPM09
+#PBS -k doe
+#PBS -N megatron-test
+#PBS -o megatron-test.out
+#PBS -e megatron-test.error
+
+
+
 source /home/yuke/lyd/conda.sh
 conda activate pytorchNCCL
 
@@ -158,9 +172,9 @@ if [ "$MODEL" = "gpt2" ]; then
 elif [ "$MODEL" = "bert" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
 	--num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
-	--lr 0.0001 --lr-decay-iters 495 --train-iters 1000 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
+	--lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
 	--micro-batch-size $MICRO_BATCH_SIZE_BERT --global-batch-size $GLOBAL_BATCH_SIZE_BERT \
-	--vocab-file $VOCAB_FILE --split 949,50,1 --fp16 --log-interval 10 --save-interval 500 --eval-interval 100 --eval-iters 10 --recompute-method uniform \
+	--vocab-file $VOCAB_FILE --split 949,50,1 --fp16 --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --recompute-method uniform \
 	--save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
 	--data-path $DATA_PATH 
 elif [ "$MODEL" = "gpt2large" ]; then
