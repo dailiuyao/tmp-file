@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #PBS -l select=1:system=polaris
 #PBS -l place=scatter
-#PBS -l walltime=00:29:59
+#PBS -l walltime=00:09:59
 #PBS -q debug
 #PBS -l filesystems=home
 #PBS -A CSC250STPM09
@@ -107,11 +107,11 @@ hostname -I
 
 # hostname -I: all ip address ### 10.140.57.108 10.201.2.7 10.201.2.27
 
-export HOSTNAME = $(hostname -I | awk '{print $NF}')
-echo $HOSTNAME
+export NAME_ADD=$(hostname -I | awk '{print $NF}')
+echo $NAME_ADD
 
 if [ "$PROTOCOL" = "RDMA" ]; then
-    export MASTER_ADDR=$HOSTNAME
+    export MASTER_ADDR=$NAME_ADD
 	export NCCL_SOCKET_IFNAME=hsn0
 	export NCCL_NET=IB
 elif [ "$PROTOCOL" = "ipoib" ]; then
