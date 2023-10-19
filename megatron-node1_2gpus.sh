@@ -107,7 +107,7 @@ hostname -I
 
 # hostname -I: all ip address ### 10.140.57.108 10.201.2.7 10.201.2.27
 
-HOSTNAME = $(hostname -I | awk '{print $NF}')
+export HOSTNAME = $(hostname -I | awk '{print $NF}')
 echo $HOSTNAME
 
 if [ "$PROTOCOL" = "RDMA" ]; then
