@@ -11,7 +11,8 @@
 #PBS -e megatron-test.error
 
 #---- USER CONFIG PARAMS----
-MPI_RUN=/opt/pbs/bin/mpiexec
+export MPI_HOME=/opt/cray/pe/mpich/8.1.16/ofi/gnu/9.1
+# MPI_RUN=/opt/pbs/bin/mpiexec
 #-------------------------
 module purge
 ml cudatoolkit-standalone/11.8.0
@@ -23,6 +24,8 @@ export WORKDIR=~/lyd
 cat $PBS_NODEFILE > $WORKDIR/myhostnames # store the hostnames
 HOST_NUM=$(wc -l < $WORKDIR/myhostnames)
 echo "Number of nodes: $HOST_NUM"
+sed -i 's/.hsn.*//' $WORKDIR/myhostnames
+
 
 # Clean up Python and mpiexec processes on each host
 for host in $(cat $WORKDIR/myhostnames); do
@@ -36,6 +39,6 @@ echo "Cleanup completed."
 export MASTER_ADD=$(hostname -I | awk '{print $NF}')
 echo "Master Addr is: $MASTER_ADD"
 
-$MPI_RUN -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
-
+#$MPI_RUN -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
+mpiexec -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
 # $MPI_RUN -hostfile  ~/myhostnames -np $HOST_NUM $WORKDIR/tf_cnn_bench.sh
