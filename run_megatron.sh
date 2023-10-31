@@ -18,7 +18,7 @@ export GLOBAL_BATCH_SIZE=$3
 
 
 
-
+export WORKDIR=~/lyd
 
 
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -l select=4:ngpus=2:system=polaris
+#PBS -l select=4:system=polaris
 #PBS -l place=scatter
 #PBS -l walltime=00:09:59
 #PBS -q debug
@@ -11,7 +11,7 @@
 #PBS -e megatron-test.error
 
 #---- USER CONFIG PARAMS----
-MPI_RUN=/home/biswas.91/projects/mvapich2-2.3b/install/bin/mpirun_rsh
+MPI_RUN=/opt/pbs/bin/mpiexec
 #-------------------------
 module purge
 ml cudatoolkit-standalone/11.8.0
@@ -19,7 +19,7 @@ ml gcc
 
 echo "Current(master) node:$(hostname)"
 
-export WORKDIR=`pwd`
+export WORKDIR=~/lyd
 cat $PBS_NODEFILE > $WORKDIR/myhostnames # store the hostnames
 HOST_NUM=$(wc -l < $WORKDIR/myhostnames)
 echo "Number of nodes: $HOST_NUM"
