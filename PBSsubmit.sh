@@ -40,5 +40,5 @@ export MASTER_ADD=$(hostname -I | awk '{print $NF}')
 echo "Master Addr is: $MASTER_ADD"
 
 #$MPI_RUN -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
-mpiexec -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
+mpiexec -f $WORKDIR/myhostnames -np $HOST_NUM -ppn 1 $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
 # $MPI_RUN -hostfile  ~/myhostnames -np $HOST_NUM $WORKDIR/tf_cnn_bench.sh
