@@ -168,26 +168,10 @@ export DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
 --master_addr $MASTER_ADDR \
 --master_port $MASTER_PORT"
 
-# if [ "$MODEL" = "gpt2" ]; then
-#         dool --time --mem --cpu --net -N en0,ib0,lo,total 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_GPT2}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-CPU.csv  &
-#         nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_GPT2}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-GPU.csv &
-#         sh rtop.sh -d ib0 -p rdma > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_GPT2}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-RTOP.csv  &
-# elif [ "$MODEL" = "bert" ]; then
-#         dool --time --mem --cpu --net -N en0,ib0,lo,total 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_BERT}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-CPU.csv  &
-#         nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_BERT}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-GPU.csv &
-#         sh rtop.sh -d ib0 -p rdma > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_BERT}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-RTOP.csv  &
-# elif [ "$MODEL" = "gpt2large" ]; then
-#         dool --time --mem --cpu --net -N en0,ib0,lo,total 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_GPT2_L}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-CPU.csv  &
-#         nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_GPT2_L}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-GPU.csv &
-#         sh rtop.sh -d ib0 -p rdma > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_GPT2_L}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-RTOP.csv  &
-# else
-#         dool --time --mem --cpu --net -N en0,ib0,lo,total 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_T5}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-CPU.csv  &
-#         nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_T5}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-GPU.csv &
-#         sh rtop.sh -d ib0 -p rdma > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/8gpus-mbs${MICRO_BATCH_SIZE_T5}/${PROTOCOL}/${MODEL}-${PROTOCOL}-8gpus-RTOP.csv  &
-# fi
 
 
-dool --time --mem --cpu --net -N hsn0,hsn1,lo,total 1 > ~/lyd/logs/dool-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv &
+
+dool --time --mem --cpu --net -N hsn0,hsn1,lo,total --output ~/lyd/logs/dool-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv 1 &
 DOOL_PID=$!
 
 nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > ~/lyd/logs/nvidiasmi-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv &
@@ -199,55 +183,63 @@ RTOP1_PID=$!
 sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn1 > ~/lyd/logs/hsn1-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv &
 RTOP2_PID=$!
 
-/home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
---num-layers 36 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
---micro-batch-size $MICRO_BATCH_SIZE_GPT2_L --global-batch-size $GLOBAL_BATCH_SIZE_GPT2_L --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
---lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
---log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
---data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.out
+if [ "$MODEL" = "gpt2" ]; then
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
+    --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
+    --micro-batch-size $MICRO_BATCH_SIZE_GPT2 --global-batch-size $GLOBAL_BATCH_SIZE_GPT2 --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
+    --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
+    --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
+    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+elif [ "$MODEL" = "bert" ]; then
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
+    --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
+    --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
+    --micro-batch-size $MICRO_BATCH_SIZE_BERT --global-batch-size $GLOBAL_BATCH_SIZE_BERT \
+    --vocab-file $VOCAB_FILE --split 949,50,1 --fp16 --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --recompute-method uniform \
+    --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
+    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+elif [ "$MODEL" = "gpt2large" ]; then
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
+    --num-layers 36 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
+    --micro-batch-size $MICRO_BATCH_SIZE_GPT2_L --global-batch-size $GLOBAL_BATCH_SIZE_GPT2_L --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
+    --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
+    --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
+    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+else
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_t5.py --num-layers 24 --hidden-size 1024 \
+    --num-attention-heads 16 --kv-channels 64 --ffn-hidden-size 3072 --encoder-seq-length 512 --decoder-seq-length 128 --max-position-embeddings 512 \
+    --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
+    --micro-batch-size $MICRO_BATCH_SIZE_T5 --global-batch-size $GLOBAL_BATCH_SIZE_T5 \
+    --vocab-file $VOCAB_FILE --vocab-extra-ids 100 --split 949,50,1 --fp16 --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 \
+    --recompute-method uniform --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
+    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+fi
 
 
+cd /home/yuke/lyd/Megatron-LM
+
+rm -rf ./checkpoints/
+
+
+echo "Training done on Node$NODE_RANK"
 
 kill $DOOL_PID
 kill $NVIDIA_PID
 kill $RTOP1_PID
 kill $RTOP2_PID
 
+echo "Kill monitors done"
+
+exit
 
 
 
-# if [ "$MODEL" = "gpt2" ]; then
-#     /home/ldai8/data/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
-# 	--num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
-# 	--micro-batch-size $MICRO_BATCH_SIZE_GPT2 --global-batch-size $GLOBAL_BATCH_SIZE_GPT2 --lr 0.00015 --train-iters 1000 --lr-decay-iters 640 \
-# 	--lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
-# 	--log-interval 10 --save-interval 500 --eval-interval 100 --eval-iters 10 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-# 	--data-path $DATA_PATH > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/2gpus-mbs${MICRO_BATCH_SIZE_GPT2}/${PROTOCOL}/${MODEL}-${PROTOCOL}-2gpus-${NODE_RANK}-mbs-${MICRO_BATCH_SIZE_GPT2}.out
-# elif [ "$MODEL" = "bert" ]; then
-#     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
-# 	--num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
-# 	--lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
-# 	--micro-batch-size $MICRO_BATCH_SIZE_BERT --global-batch-size $GLOBAL_BATCH_SIZE_BERT \
-# 	--vocab-file $VOCAB_FILE --split 949,50,1 --fp16 --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --recompute-method uniform \
-# 	--save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-# 	--data-path $DATA_PATH 
-# elif [ "$MODEL" = "gpt2large" ]; then
-#     /home/ldai8/data/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
-# 	--num-layers 36 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
-# 	--micro-batch-size $MICRO_BATCH_SIZE_GPT2_L --global-batch-size $GLOBAL_BATCH_SIZE_GPT2_L --lr 0.00015 --train-iters 1000 --lr-decay-iters 640 \
-# 	--lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
-# 	--log-interval 10 --save-interval 500 --eval-interval 100 --eval-iters 10 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-# 	--data-path $DATA_PATH > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/2gpus-mbs${MICRO_BATCH_SIZE_GPT2_L}/${PROTOCOL}/${MODEL}-${PROTOCOL}-2gpus-${NODE_RANK}-mbs-${MICRO_BATCH_SIZE_GPT2_L}.out
-# else
-#     /home/ldai8/data/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_t5.py --num-layers 24 --hidden-size 1024 \
-# 	--num-attention-heads 16 --kv-channels 64 --ffn-hidden-size 3072 --encoder-seq-length 512 --decoder-seq-length 128 --max-position-embeddings 512 \
-# 	--lr 0.0001 --lr-decay-iters 495 --train-iters 1000 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
-# 	--micro-batch-size $MICRO_BATCH_SIZE_T5 --global-batch-size $GLOBAL_BATCH_SIZE_T5 \
-# 	--vocab-file $VOCAB_FILE --vocab-extra-ids 100 --split 949,50,1 --fp16 --log-interval 10 --save-interval 500 --eval-interval 100 --eval-iters 10 \
-# 	--recompute-method uniform --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-# 	--data-path $DATA_PATH > /home/ldai8/bash/Megatron_data_output_profile/${MODEL}/2gpus-mbs${MICRO_BATCH_SIZE_T5}/${PROTOCOL}/${MODEL}-${PROTOCOL}-2gpus-${NODE_RANK}-mbs-${MICRO_BATCH_SIZE_T5}.out
-# fi
-
+# /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
+# --num-layers 36 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
+# --micro-batch-size $MICRO_BATCH_SIZE_GPT2_L --global-batch-size $GLOBAL_BATCH_SIZE_GPT2_L --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
+# --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
+# --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
+# --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
 
 
 

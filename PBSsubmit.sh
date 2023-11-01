@@ -45,4 +45,4 @@ echo "Master Addr is: $MASTER_ADD"
 #mpiexec -np $HOST_NUM --ppn 1 sh -c 'echo "hello from $(hostname)"'
 mpiexec -np $HOST_NUM -ppn 1 sh $WORKDIR/megatron_run_scripts/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
 # $MPI_RUN -hostfile  ~/myhostnames -np $HOST_NUM $WORKDIR/tf_cnn_bench.sh
-echo "Done"
+echo "Done on PBSjob"
