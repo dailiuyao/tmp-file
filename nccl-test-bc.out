@@ -1,0 +1,2226 @@
+# nThread 1 nGpus 1 minBytes 1048576 maxBytes 1048576 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  65378 on x3203c0s13b0n0 device  0 [0x07] NVIDIA A100-SXM4-40GB
+#  Rank  1 Group  0 Pid  65379 on x3203c0s13b0n0 device  1 [0x46] NVIDIA A100-SXM4-40GB
+#  Rank  2 Group  0 Pid  65380 on x3203c0s13b0n0 device  2 [0x85] NVIDIA A100-SXM4-40GB
+#  Rank  3 Group  0 Pid  65381 on x3203c0s13b0n0 device  3 [0xc7] NVIDIA A100-SXM4-40GB
+x3203c0s13b0n0:65378:65378 [0] NCCL INFO Bootstrap : Using bond0:10.140.56.177<0>
+x3203c0s13b0n0:65378:65378 [0] NCCL INFO NET/Plugin : Plugin load returned 17 : libnccl-net.so: cannot open shared object file: No such file or directory.
+x3203c0s13b0n0:65378:65378 [0] NCCL INFO cudaDriverVersion 11040
+NCCL version 2.14.3+cuda11.8
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB bond0:10.140.56.177<0>
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Using network IB
+x3203c0s13b0n0:65381:65381 [3] NCCL INFO cudaDriverVersion 11040
+x3203c0s13b0n0:65380:65380 [2] NCCL INFO cudaDriverVersion 11040
+x3203c0s13b0n0:65379:65379 [1] NCCL INFO cudaDriverVersion 11040
+x3203c0s13b0n0:65379:65379 [1] NCCL INFO Bootstrap : Using bond0:10.140.56.177<0>
+x3203c0s13b0n0:65379:65379 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3203c0s13b0n0:65380:65380 [2] NCCL INFO Bootstrap : Using bond0:10.140.56.177<0>
+x3203c0s13b0n0:65381:65381 [3] NCCL INFO Bootstrap : Using bond0:10.140.56.177<0>
+x3203c0s13b0n0:65381:65381 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3203c0s13b0n0:65380:65380 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB bond0:10.140.56.177<0>
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Using network IB
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB bond0:10.140.56.177<0>
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Using network IB
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB bond0:10.140.56.177<0>
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Using network IB
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Setting affinity for GPU 3 to 08,00000008
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 00/24 :    0   1   2   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 01/24 :    0   1   3   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 02/24 :    0   2   3   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 03/24 :    0   2   1   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 04/24 :    0   3   1   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 05/24 :    0   3   2   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 06/24 :    0   1   2   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 07/24 :    0   1   3   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 08/24 :    0   2   3   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 09/24 :    0   2   1   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 10/24 :    0   3   1   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 11/24 :    0   3   2   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 12/24 :    0   1   2   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 13/24 :    0   1   3   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 14/24 :    0   2   3   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 15/24 :    0   2   1   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 16/24 :    0   3   1   2
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 3/-1/-1->1->-1 [3] 3/-1/-1->1->-1 [4] -1/-1/-1->1->3 [5] -1/-1/-1->1->3 [6] 0/-1/-1->1->2 [7] 0/-1/-1->1->2 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 3/-1/-1->1->-1 [11] 3/-1/-1->1->-1 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 3/-1/-1->1->-1 [15] 3/-1/-1->1->-1 [16] -1/-1/-1->1->3 [17] -1/-1/-1->1->3 [18] 0/-1/-1->1->2 [19] 0/-1/-1->1->2 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->0 [22] 3/-1/-1->1->-1 [23] 3/-1/-1->1->-1
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] -1/-1/-1->2->0 [3] -1/-1/-1->2->0 [4] 0/-1/-1->2->-1 [5] 0/-1/-1->2->-1 [6] 1/-1/-1->2->3 [7] 1/-1/-1->2->3 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] -1/-1/-1->2->0 [11] -1/-1/-1->2->0 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] -1/-1/-1->2->0 [15] -1/-1/-1->2->0 [16] 0/-1/-1->2->-1 [17] 0/-1/-1->2->-1 [18] 1/-1/-1->2->3 [19] 1/-1/-1->2->3 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] -1/-1/-1->2->0 [23] -1/-1/-1->2->0
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] 0/-1/-1->3->1 [3] 0/-1/-1->3->1 [4] 1/-1/-1->3->0 [5] 1/-1/-1->3->0 [6] 2/-1/-1->3->-1 [7] 2/-1/-1->3->-1 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] 0/-1/-1->3->1 [11] 0/-1/-1->3->1 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] 0/-1/-1->3->1 [15] 0/-1/-1->3->1 [16] 1/-1/-1->3->0 [17] 1/-1/-1->3->0 [18] 2/-1/-1->3->-1 [19] 2/-1/-1->3->-1 [20] -1/-1/-1->3->2 [21] -1/-1/-1->3->2 [22] 0/-1/-1->3->1 [23] 0/-1/-1->3->1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 17/24 :    0   3   2   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 18/24 :    0   1   2   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 19/24 :    0   1   3   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 20/24 :    0   2   3   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 21/24 :    0   2   1   3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 22/24 :    0   3   1   2
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 23/24 :    0   3   2   1
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 2/-1/-1->0->3 [3] 2/-1/-1->0->3 [4] 3/-1/-1->0->2 [5] 3/-1/-1->0->2 [6] -1/-1/-1->0->1 [7] -1/-1/-1->0->1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 2/-1/-1->0->3 [11] 2/-1/-1->0->3 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 2/-1/-1->0->3 [15] 2/-1/-1->0->3 [16] 3/-1/-1->0->2 [17] 3/-1/-1->0->2 [18] -1/-1/-1->0->1 [19] -1/-1/-1->0->1 [20] 1/-1/-1->0->-1 [21] 1/-1/-1->0->-1 [22] 2/-1/-1->0->3 [23] 2/-1/-1->0->3
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 00/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 01/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 06/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 07/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 12/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 13/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 18/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 19/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 00/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 03/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 06/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 09/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 12/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 15/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 18/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 21/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 00/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 04/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 06/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 10/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 12/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 16/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 18/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 22/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 00/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 02/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 06/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 08/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 12/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 14/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 18/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 20/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 02/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 01/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 04/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 07/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 10/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 13/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 16/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 19/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 22/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 03/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 08/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 09/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 14/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 02/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 04/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 08/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 10/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 14/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 16/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 20/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 22/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 15/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 01/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 03/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 07/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 09/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 13/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 15/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 19/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 21/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 20/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 21/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 01/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 02/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 05/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 05/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 07/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 08/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 11/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 11/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 13/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 14/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 17/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 17/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 19/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 20/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 23/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 23/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 04/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 05/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 10/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 11/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 16/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 17/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 22/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 23/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Connected all rings
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 08/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 09/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 20/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 21/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 03/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 05/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 09/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 11/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 15/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 17/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 21/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 23/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Connected all rings
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Connected all rings
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Connected all rings
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 01/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 02/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 07/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 04/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 08/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 05/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 09/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 10/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 13/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 11/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 19/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 14/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 20/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 16/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 21/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 17/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 22/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 23/0 : 3[c7000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 01/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 07/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 09/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 13/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 19/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 21/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 02/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 04/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 05/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 10/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 11/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 14/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 16/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 17/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 22/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 23/0 : 1[46000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 04/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 05/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 10/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 11/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 16/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 17/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 22/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 23/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 03/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 05/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 11/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 15/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 17/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 23/0 : 3[c7000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 00/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 06/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 08/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 09/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 12/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 18/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 20/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Channel 21/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 02/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 03/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 05/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 11/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 14/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 15/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 17/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 23/0 : 2[85000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 00/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 01/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 06/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 07/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 08/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 12/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 13/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 18/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 19/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Channel 20/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 02/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 03/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 14/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Channel 15/0 : 0[7000] -> 3[c7000] via P2P/IPC/read
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO Connected all trees by HAO
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO NCCL_ALGO set by environment to Ring
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO 24 coll channels, 32 p2p channels, 8 p2p channels per peer
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 00/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 01/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 06/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 07/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 09/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 12/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 13/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 18/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 19/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Channel 21/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO Connected all trees by HAO
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO NCCL_ALGO set by environment to Ring
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO 24 coll channels, 32 p2p channels, 8 p2p channels per peer
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO Connected all trees by HAO
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO NCCL_ALGO set by environment to Ring
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO 24 coll channels, 32 p2p channels, 8 p2p channels per peer
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO Connected all trees by HAO
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO NCCL_ALGO set by environment to Ring
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO 24 coll channels, 32 p2p channels, 8 p2p channels per peer
+x3203c0s13b0n0:65380:65408 [2] NCCL INFO comm 0x22853f0 rank 2 nranks 4 cudaDev 2 busId 85000 - Init COMPLETE
+x3203c0s13b0n0:65379:65406 [1] NCCL INFO comm 0x24e1230 rank 1 nranks 4 cudaDev 1 busId 46000 - Init COMPLETE
+x3203c0s13b0n0:65378:65403 [0] NCCL INFO comm 0x2df3fe0 rank 0 nranks 4 cudaDev 0 busId 7000 - Init COMPLETE
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+x3203c0s13b0n0:65381:65407 [3] NCCL INFO comm 0x3540240 rank 3 nranks 4 cudaDev 3 busId c7000 - Init COMPLETE
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000006000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000031000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[L[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+YD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24     1048576        262144     float    none       0
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 36 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 15 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 29 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+ getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 1119 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 2491 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 9 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[L[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in nccl[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in nccl[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] oBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+Broadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+Broadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+ut nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 29 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 26 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 25 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 25 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 22 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 25 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 21 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broad[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 18 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 23 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 22 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 22 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 21 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broad[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 29 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 27 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 26 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 26 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 15 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 23 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 16 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broad[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enquecast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+cast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+cast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+ue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6000000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 27 us
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 30 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+    162.9    6.44    6.44      0[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000004000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in nccl[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in nccl[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in nccl[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] outBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+Broadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 75 us
+
+[Broadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+ protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlLYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+goInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000002000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 41 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 72 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 23 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 16 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 1 Broad
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 22 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 2 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 67 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 24 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 22 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 28 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 18 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 13 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 17 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 14 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 20 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 19 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 9 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 3 Broadc[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 12 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 11 us
+[Hao INFO in ncclBroadcast (broadcast.cc)] rank 0 Broadcast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0cast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+ast: count: 262144, datatype: ncclFloat32/ncclFloat, message size: 1048576 Bytes
+, Duration between Point 1 and Point 2: 0.000003000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x150dd6100000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 24
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 512
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1048576
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 Broadcast RING LL Sum int8_t Elapsed time: 46 us
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 Broadcast RING LL Sum int8_t Elapsed time: 40 us
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 Broadcast RING LL Sum int8_t Elapsed time: 46 us
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 24
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 Broadcast RING LL Sum int8_t Elapsed time: 10 us
+    159.4    6.58    6.58      0
+x3203c0s13b0n0:65378:65378 [0] NCCL INFO comm 0x2df3fe0 rank 0 nranks 4 cudaDev 0 busId 7000 - Destroy COMPLETE
+x3203c0s13b0n0:65381:65381 [3] NCCL INFO comm 0x3540240 rank 3 nranks 4 cudaDev 3 busId c7000 - Destroy COMPLETE
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 6.50643 
+#
+x3203c0s13b0n0:65380:65380 [2] NCCL INFO comm 0x22853f0 rank 2 nranks 4 cudaDev 2 busId 85000 - Destroy COMPLETE
+x3203c0s13b0n0:65379:65379 [1] NCCL INFO comm 0x24e1230 rank 1 nranks 4 cudaDev 1 busId 46000 - Destroy COMPLETE
+
