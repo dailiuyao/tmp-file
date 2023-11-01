@@ -143,7 +143,7 @@ while read -r line; do
   # Compare the current line with the current hostname
   if [ "$line" == "$current_hostname" ]; then
     # If there's a match, set NODE_RANK and break out of the loop
-    export NODE_RANK=$lineno
+    export NODE_RANK=$((lineno - 1))
     echo "NODE_RANK set to $NODE_RANK"
     break
   fi
