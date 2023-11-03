@@ -16,10 +16,11 @@ export MODEL=$1
 export MICRO_BATCH_SIZE=$2
 export GLOBAL_BATCH_SIZE=$3
 
-
+export TP=$6
+export PP=$7
 
 export WORKDIR=~/lyd
-
+export LD_PRELOAD=/home/hqi6/data/nccl/build/lib/libnccl.so.2
 
 
 export MICRO_BATCH_SIZE_GPT2=$MICRO_BATCH_SIZE
@@ -49,11 +50,12 @@ cd /home/yuke/lyd/Megatron-LM
 
 
 rm -rf ./checkpoints/
-
+rm -rf /local/scratch/checkpoints/
 
 export GPUS_PER_NODE=4
 
 export NCCL_DEBUG=INFO 
+export NCCL_DEBUG_SUBSYS=ALL
 
 export NNODES=$5
 
@@ -71,6 +73,7 @@ export NNODES=$5
 
 export WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
 
+export DP=$(($GPUS_PER_NODE*$NNODES/$TP/$PP))
 
 if [ "$MODEL" = "gpt2" ]; then
     export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/gpt2_345m
@@ -82,10 +85,13 @@ elif [ "$MODEL" = "bert" ]; then
 	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
 	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-bert_text_sentence
 elif [ "$MODEL" = "gpt2large" ]; then
-    export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/gpt2_774m
-	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json
-	export MERGE_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt
-	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-gpt2_text_document  
+    export CHECKPOINT_PATH=/local/scratch/checkpoints/gpt2_774m
+	cp /home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json /local/scratch/gpt2-vocab.json
+    export VOCAB_FILE=/local/scratch/gpt2-vocab.json
+	cp /home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt /local/scratch/gpt2-merges.txt
+    export MERGE_FILE=/local/scratch/gpt2-merges.txt
+	cp /home/yuke/lyd/Megatron-LM/my-gpt2_text_document* /local/scratch
+    export DATA_PATH=/local/scratch/my-gpt2_text_document  
 else
     export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/t5_base
 	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
@@ -170,59 +176,71 @@ export DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
 
 
 
+iostat -x 1 /dev/nvme0n1 /dev/nvme1n1 > /home/yuke/lyd/tmp-file/logs/iostat-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv 1 &
+IO_PID=$!
 
-dool --time --mem --cpu --net -N hsn0,hsn1,lo,total --output ~/lyd/logs/dool-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv 1 &
+dool --time --mem --cpu --net -N hsn0,hsn1,lo,total --output /home/yuke/lyd/tmp-file/logs/dool-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv 1 &
 DOOL_PID=$!
 
-nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > ~/lyd/logs/nvidiasmi-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv &
+nvidia-smi --query-gpu=name,timestamp,uuid,utilization.gpu,memory.total,utilization.memory,power.draw --format=csv -l 1 > /home/yuke/lyd/tmp-file/logs/nvidiasmi-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv &
 NVIDIA_PID=$!
 
-sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn0 > ~/lyd/logs/hsn0-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv &
+sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn0 > /home/yuke/lyd/tmp-file/logs/hsn0-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv &
 RTOP1_PID=$!
 
-sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn1 > ~/lyd/logs/hsn1-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE_GPT2_L}.csv &
+sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn1 > /home/yuke/lyd/tmp-file/logs/hsn1-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv &
 RTOP2_PID=$!
 
 if [ "$MODEL" = "gpt2" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
+    --tensor-model-parallel-size ${TP} \
+    --pipeline-model-parallel-size ${PP} \
     --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
     --micro-batch-size $MICRO_BATCH_SIZE_GPT2 --global-batch-size $GLOBAL_BATCH_SIZE_GPT2 --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
     --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
     --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+    --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 elif [ "$MODEL" = "bert" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
+    --tensor-model-parallel-size ${TP} \
+    --pipeline-model-parallel-size ${PP} \
     --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
     --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
     --micro-batch-size $MICRO_BATCH_SIZE_BERT --global-batch-size $GLOBAL_BATCH_SIZE_BERT \
     --vocab-file $VOCAB_FILE --split 949,50,1 --fp16 --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --recompute-method uniform \
     --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+    --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 elif [ "$MODEL" = "gpt2large" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
-    --num-layers 36 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
+    --tensor-model-parallel-size ${TP} \
+    --pipeline-model-parallel-size ${PP} \
+    --num-layers 40 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
     --micro-batch-size $MICRO_BATCH_SIZE_GPT2_L --global-batch-size $GLOBAL_BATCH_SIZE_GPT2_L --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
     --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
     --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+    --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 else
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_t5.py --num-layers 24 --hidden-size 1024 \
+    --tensor-model-parallel-size ${TP} \
+    --pipeline-model-parallel-size ${PP} \
+    --pipeline-model-parallel-split-rank $(($GPUS_PER_NODE*$NNODES/2)) \
     --num-attention-heads 16 --kv-channels 64 --ffn-hidden-size 3072 --encoder-seq-length 512 --decoder-seq-length 128 --max-position-embeddings 512 \
     --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
     --micro-batch-size $MICRO_BATCH_SIZE_T5 --global-batch-size $GLOBAL_BATCH_SIZE_T5 \
     --vocab-file $VOCAB_FILE --vocab-extra-ids 100 --split 949,50,1 --fp16 --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 \
     --recompute-method uniform --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
-    --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
+    --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 fi
 
 
 cd /home/yuke/lyd/Megatron-LM
 
 rm -rf ./checkpoints/
-
+rm -rf /local/scratch/checkpoints/
 
 echo "Training done on Node$NODE_RANK"
 
+kill $IO_PID
 kill $DOOL_PID
 kill $NVIDIA_PID
 kill $RTOP1_PID

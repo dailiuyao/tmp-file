@@ -1,14 +1,14 @@
 #!/bin/bash
-#PBS -l select=4:system=polaris
+#PBS -l select=5:system=polaris
 #PBS -l place=scatter
 #PBS -l walltime=00:09:59
 #PBS -q debug-scaling
 #PBS -l filesystems=home
 #PBS -A CSC250STPM09
 #PBS -k doe
-#PBS -N megatron-test
-#PBS -o megatron-test.out
-#PBS -e megatron-test.error
+#PBS -N megatron
+#PBS -o megatron.out
+#PBS -e megatron.error
 
 #---- USER CONFIG PARAMS----
 export MPI_HOME=/opt/cray/pe/mpich/8.1.16/ofi/gnu/9.1
@@ -43,6 +43,6 @@ echo "Master Addr is: $MASTER_ADD"
 #$MPI_RUN -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
 #mpiexec -f $WORKDIR/myhostnames -np $HOST_NUM $WORKDIR/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
 #mpiexec -np $HOST_NUM --ppn 1 sh -c 'echo "hello from $(hostname)"'
-mpiexec -np $HOST_NUM -ppn 1 sh $WORKDIR/megatron_run_scripts/run_megatron.sh gpt2large 12 192 $MASTER_ADD $HOST_NUM
+mpiexec -np $HOST_NUM -ppn 1 sh $WORKDIR/megatron_run_scripts/run_megatron.sh gpt2large 12 240 $MASTER_ADD $HOST_NUM 1 1
 # $MPI_RUN -hostfile  ~/myhostnames -np $HOST_NUM $WORKDIR/tf_cnn_bench.sh
 echo "Done on PBSjob"
