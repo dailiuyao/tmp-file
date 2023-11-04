@@ -51,7 +51,7 @@ cd /home/yuke/lyd/Megatron-LM
 
 rm -rf /home/yuke/lyd/Megatron-LM/checkpoints/
 rm -rf /local/scratch/checkpoints/
-cd /local/scratch
+#cd /local/scratch
 
 
 export GPUS_PER_NODE=4
@@ -89,11 +89,11 @@ elif [ "$MODEL" = "bert" ]; then
 elif [ "$MODEL" = "gpt2large" ]; then
     export CHECKPOINT_PATH=/local/scratch/checkpoints/gpt2_774m
 	cp /home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json /local/scratch/gpt2-vocab.json
-    export VOCAB_FILE=/local/scratch/gpt2-vocab.json
+    export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json
 	cp /home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt /local/scratch/gpt2-merges.txt
-    export MERGE_FILE=/local/scratch/gpt2-merges.txt
+    export MERGE_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt
 	cp /home/yuke/lyd/Megatron-LM/my-gpt2_text_document* /local/scratch
-    export DATA_PATH=/local/scratch/my-gpt2_text_document  
+    export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-gpt2_text_document  
 else
     export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/t5_base
 	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
