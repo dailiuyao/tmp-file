@@ -20,7 +20,7 @@ export TP=$6
 export PP=$7
 
 export WORKDIR=~/lyd
-export LD_PRELOAD=/home/hqi6/data/nccl/build/lib/libnccl.so.2
+export LD_PRELOAD=/home/yuke/lyd/nccl/build/lib/libnccl.so.2
 
 
 export MICRO_BATCH_SIZE_GPT2=$MICRO_BATCH_SIZE
