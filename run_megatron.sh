@@ -16,8 +16,8 @@ export MODEL=$1
 export MICRO_BATCH_SIZE=$2
 export GLOBAL_BATCH_SIZE=$3
 
-export TP=$6
-export PP=$7
+# export TP=$6
+# export PP=$7
 
 export WORKDIR=~/lyd
 export LD_PRELOAD=/home/yuke/lyd/nccl/build/lib/libnccl.so.2
@@ -195,8 +195,6 @@ RTOP2_PID=$!
 
 if [ "$MODEL" = "gpt2" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_gpt.py \
-    --tensor-model-parallel-size ${TP} \
-    --pipeline-model-parallel-size ${PP} \
     --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
     --micro-batch-size $MICRO_BATCH_SIZE_GPT2 --global-batch-size $GLOBAL_BATCH_SIZE_GPT2 --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
     --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
@@ -204,8 +202,6 @@ if [ "$MODEL" = "gpt2" ]; then
     --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 elif [ "$MODEL" = "bert" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_bert.py \
-    --tensor-model-parallel-size ${TP} \
-    --pipeline-model-parallel-size ${PP} \
     --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
     --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
     --micro-batch-size $MICRO_BATCH_SIZE_BERT --global-batch-size $GLOBAL_BATCH_SIZE_BERT \
@@ -214,8 +210,6 @@ elif [ "$MODEL" = "bert" ]; then
     --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 elif [ "$MODEL" = "gpt2large" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_gpt.py \
-    --tensor-model-parallel-size ${TP} \
-    --pipeline-model-parallel-size ${PP} \
     --num-layers 40 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
     --micro-batch-size $MICRO_BATCH_SIZE_GPT2_L --global-batch-size $GLOBAL_BATCH_SIZE_GPT2_L --lr 0.00015 --train-iters 100 --lr-decay-iters 64 \
     --lr-decay-style cosine --vocab-file $VOCAB_FILE --merge-file $MERGE_FILE --lr-warmup-fraction .01 --fp16 \
@@ -223,9 +217,6 @@ elif [ "$MODEL" = "gpt2large" ]; then
     --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 else
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_t5.py --num-layers 24 --hidden-size 1024 \
-    --tensor-model-parallel-size ${TP} \
-    --pipeline-model-parallel-size ${PP} \
-    --pipeline-model-parallel-split-rank $(($PP/2)) \
     --num-attention-heads 16 --kv-channels 64 --ffn-hidden-size 3072 --encoder-seq-length 512 --decoder-seq-length 128 --max-position-embeddings 512 \
     --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
     --micro-batch-size $MICRO_BATCH_SIZE_T5 --global-batch-size $GLOBAL_BATCH_SIZE_T5 \
@@ -262,7 +253,9 @@ exit
 # --data-path $DATA_PATH > ~/lyd/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs-${GLOBAL_BATCH_SIZE}.out
 
 
-
+    # --tensor-model-parallel-size ${TP} \
+    # --pipeline-model-parallel-size ${PP} \
+    # --pipeline-model-parallel-split-rank $(($PP/2)) \
 
 
 
