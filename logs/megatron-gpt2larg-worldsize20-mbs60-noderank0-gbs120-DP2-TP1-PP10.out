@@ -1,0 +1,1207 @@
+using world size: 20, data-parallel-size: 2, tensor-model-parallel size: 1, pipeline-model-parallel size: 10 
+using torch.float16 for parameters ...
+Gradient accumulation fusion to linear layer weight gradient computation is supported only with fp32 gradient accumulation. Setting gradient_accumulation_fusion to False
+------------------------ arguments ------------------------
+  accumulate_allreduce_grads_in_fp32 .............. False
+  adam_beta1 ...................................... 0.9
+  adam_beta2 ...................................... 0.999
+  adam_eps ........................................ 1e-08
+  adlr_autoresume ................................. False
+  adlr_autoresume_interval ........................ 1000
+  apply_query_key_layer_scaling ................... True
+  apply_residual_connection_post_layernorm ........ False
+  async_tensor_model_parallel_allreduce ........... True
+  attention_dropout ............................... 0.1
+  attention_softmax_in_fp32 ....................... False
+  bert_binary_head ................................ True
+  bert_load ....................................... None
+  bf16 ............................................ False
+  bias_dropout_fusion ............................. True
+  bias_gelu_fusion ................................ True
+  biencoder_projection_dim ........................ 0
+  biencoder_shared_query_context_model ............ False
+  block_data_path ................................. None
+  classes_fraction ................................ 1.0
+  clip_grad ....................................... 1.0
+  consumed_train_samples .......................... 0
+  consumed_valid_samples .......................... 0
+  data_impl ....................................... infer
+  data_parallel_random_init ....................... False
+  data_parallel_size .............................. 2
+  data_path ....................................... ['/home/yuke/lyd/Megatron-LM/my-t5_text_sentence']
+  data_per_class_fraction ......................... 1.0
+  data_sharding ................................... True
+  dataloader_type ................................. single
+  DDP_impl ........................................ local
+  decoder_seq_length .............................. 128
+  dino_bottleneck_size ............................ 256
+  dino_freeze_last_layer .......................... 1
+  dino_head_hidden_size ........................... 2048
+  dino_local_crops_number ......................... 10
+  dino_local_img_size ............................. 96
+  dino_norm_last_layer ............................ False
+  dino_teacher_temp ............................... 0.07
+  dino_warmup_teacher_temp ........................ 0.04
+  dino_warmup_teacher_temp_epochs ................. 30
+  distribute_saved_activations .................... False
+  distributed_backend ............................. nccl
+  embedding_path .................................. None
+  empty_unused_memory_level ....................... 0
+  encoder_seq_length .............................. 512
+  end_weight_decay ................................ 0.01
+  eod_mask_loss ................................... False
+  eval_interval ................................... 10
+  eval_iters ...................................... 1
+  evidence_data_path .............................. None
+  exit_duration_in_mins ........................... None
+  exit_interval ................................... None
+  exit_signal_handler ............................. False
+  ffn_hidden_size ................................. 3072
+  finetune ........................................ False
+  fp16 ............................................ True
+  fp16_lm_cross_entropy ........................... False
+  fp32_residual_connection ........................ False
+  global_batch_size ............................... 120
+  gradient_accumulation_fusion .................... False
+  head_lr_mult .................................... 1.0
+  hidden_dropout .................................. 0.1
+  hidden_size ..................................... 1024
+  hysteresis ...................................... 2
+  ict_head_size ................................... None
+  ict_load ........................................ None
+  img_h ........................................... 224
+  img_w ........................................... 224
+  indexer_batch_size .............................. 128
+  indexer_log_interval ............................ 1000
+  inference_batch_times_seqlen_threshold .......... 512
+  init_method_std ................................. 0.02
+  init_method_xavier_uniform ...................... False
+  initial_loss_scale .............................. 4294967296
+  iter_per_epoch .................................. 1250
+  kv_channels ..................................... 64
+  layernorm_epsilon ............................... 1e-05
+  lazy_mpu_init ................................... None
+  load ............................................ /home/yuke/lyd/Megatron-LM/checkpoints/t5_base
+  local_rank ...................................... 0
+  log_batch_size_to_tensorboard ................... False
+  log_interval .................................... 1
+  log_learning_rate_to_tensorboard ................ True
+  log_loss_scale_to_tensorboard ................... True
+  log_memory_to_tensorboard ....................... False
+  log_num_zeros_in_grad ........................... False
+  log_params_norm ................................. False
+  log_timers_to_tensorboard ....................... False
+  log_validation_ppl_to_tensorboard ............... False
+  log_world_size_to_tensorboard ................... False
+  loss_scale ...................................... None
+  loss_scale_window ............................... 1000
+  lr .............................................. 0.0001
+  lr_decay_iters .................................. 49
+  lr_decay_samples ................................ None
+  lr_decay_style .................................. linear
+  lr_warmup_fraction .............................. 0.01
+  lr_warmup_iters ................................. 0
+  lr_warmup_samples ............................... 0
+  make_vocab_size_divisible_by .................... 128
+  mask_factor ..................................... 1.0
+  mask_prob ....................................... 0.15
+  mask_type ....................................... random
+  masked_softmax_fusion ........................... True
+  max_position_embeddings ......................... 512
+  merge_file ...................................... None
+  micro_batch_size ................................ 60
+  min_loss_scale .................................. 1.0
+  min_lr .......................................... 1e-05
+  mmap_warmup ..................................... False
+  no_load_optim ................................... None
+  no_load_rng ..................................... None
+  no_persist_layer_norm ........................... False
+  no_save_optim ................................... None
+  no_save_rng ..................................... None
+  num_attention_heads ............................. 16
+  num_channels .................................... 3
+  num_classes ..................................... 1000
+  num_experts ..................................... None
+  num_layers ...................................... 24
+  num_layers_per_virtual_pipeline_stage ........... None
+  num_workers ..................................... 2
+  onnx_safe ....................................... None
+  openai_gelu ..................................... False
+  optimizer ....................................... adam
+  override_opt_param_scheduler .................... False
+  params_dtype .................................... torch.float16
+  patch_dim ....................................... 16
+  pipeline_model_parallel_size .................... 10
+  pipeline_model_parallel_split_rank .............. 5
+  query_in_block_prob ............................. 0.1
+  rampup_batch_size ............................... None
+  rank ............................................ 0
+  recompute_granularity ........................... None
+  recompute_method ................................ uniform
+  recompute_num_layers ............................ 1
+  reset_attention_mask ............................ False
+  reset_position_ids .............................. False
+  retriever_report_topk_accuracies ................ []
+  retriever_score_scaling ......................... False
+  retriever_seq_length ............................ 256
+  sample_rate ..................................... 1.0
+  save ............................................ /home/yuke/lyd/Megatron-LM/checkpoints/t5_base
+  save_interval ................................... 50
+  scatter_gather_tensors_in_pipeline .............. True
+  seed ............................................ 1234
+  seq_length ...................................... 512
+  sequence_parallel ............................... False
+  sgd_momentum .................................... 0.9
+  short_seq_prob .................................. 0.1
+  split ........................................... 949,50,1
+  standalone_embedding_stage ...................... False
+  start_weight_decay .............................. 0.01
+  swin_backbone_type .............................. tiny
+  tensor_model_parallel_size ...................... 1
+  tensorboard_dir ................................. None
+  tensorboard_log_interval ........................ 1
+  tensorboard_queue_size .......................... 1000
+  titles_data_path ................................ None
+  tokenizer_type .................................. BertWordPieceLowerCase
+  train_iters ..................................... 100
+  train_samples ................................... None
+  transformer_pipeline_model_parallel_size ........ 10
+  use_checkpoint_opt_param_scheduler .............. False
+  use_contiguous_buffers_in_local_ddp ............. True
+  use_cpu_initialization .......................... None
+  use_one_sent_docs ............................... False
+  virtual_pipeline_model_parallel_size ............ None
+  vision_backbone_type ............................ vit
+  vision_pretraining .............................. False
+  vision_pretraining_type ......................... classify
+  vocab_extra_ids ................................. 100
+  vocab_file ...................................... /home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
+  weight_decay .................................... 0.01
+  weight_decay_incr_style ......................... constant
+  world_size ...................................... 20
+-------------------- end of arguments ---------------------
+setting number of micro-batches to constant 1
+> building BertWordPieceLowerCase tokenizer ...
+ > padded vocab (size: 29098) with 86 dummy tokens (new size: 29184)
+> initializing torch distributed ...
+> initializing tensor model parallel with size 1
+> initializing pipeline model parallel with size 10
+> setting random seeds to 1234 ...
+> initializing model parallel cuda seeds on global rank 0, model parallel rank 0, and data parallel rank 0 with model parallel seed: 3952 and data parallel seed: 1234
+> compiling dataset index builder ...
+make: Entering directory '/home/yuke/lyd/Megatron-LM/megatron/data'
+make: Nothing to be done for 'default'.
+make: Leaving directory '/home/yuke/lyd/Megatron-LM/megatron/data'
+>>> done with dataset index builder. Compilation time: 1.331 seconds
+> compiling and loading fused kernels ...
+ninja: no work to do.
+ninja: no work to do.
+ninja: no work to do.
+ninja: no work to do.
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO NCCL_SOCKET_IFNAME set to hsn0
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO Bootstrap : Using hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO cudaDriverVersion 11040
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO cudaDriverVersion 11040
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO cudaDriverVersion 11040
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO cudaDriverVersion 11040
+NCCL version 2.14.3+cuda11.8
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO init.cc:1147 Cuda Host Alloc Size 4 pointer 0x153f27600000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Using network IB
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO NCCL_SOCKET_IFNAME set to hsn0
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO Bootstrap : Using hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO init.cc:1147 Cuda Host Alloc Size 4 pointer 0x14a232e00000
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO NCCL_SOCKET_IFNAME set to hsn0
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO Bootstrap : Using hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO init.cc:1147 Cuda Host Alloc Size 4 pointer 0x147f64e00000
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO NCCL_SOCKET_IFNAME set to hsn0
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO Bootstrap : Using hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO init.cc:1147 Cuda Host Alloc Size 4 pointer 0x14f4b6e00000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Using network IB
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Using network IB
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [1]mlx5_1:1/RoCE [RO]; OOB hsn0:10.201.2.34<0>
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Using network IB
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 0 'mlx5_0'
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 1 'mlx5_1'
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO transport/p2p.cc:151 Cuda Alloc Size 2097152 pointer 0x147f65800000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO === System : maxBw 12.0 totalBw 264.0 ===
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO CPU/3 (1/2/-1)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + PCI[24.0] - PCI/5000 (11f8406811f8beef)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO               + PCI[24.0] - GPU/7000 (0)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO CPU/2 (1/2/-1)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + PCI[24.0] - PCI/44000 (11f8406811f8beef)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO               + PCI[24.0] - GPU/46000 (1)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + PCI[12.0] - NIC/43000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO               + NET[12.5] - NET/1 (246b02ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO CPU/1 (1/2/-1)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + PCI[24.0] - PCI/83000 (11f8406811f8beef)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO               + PCI[24.0] - GPU/85000 (2)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO CPU/0 (1/2/-1)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + PCI[24.0] - PCI/C5000 (11f8406811f8beef)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO               + PCI[24.0] - GPU/C7000 (3)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO + PCI[12.0] - NIC/C8000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO               + NET[12.5] - NET/0 (348604ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO ==========================================
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU/7000 :GPU/7000 (0/5000.000000/LOC) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (2/24.000000/PHB) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU/46000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (0/5000.000000/LOC) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (2/24.000000/PHB) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (4/12.000000/PHB) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU/85000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (0/5000.000000/LOC) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (2/24.000000/PHB) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO GPU/C7000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (0/5000.000000/LOC) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (2/24.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (4/12.000000/PHB) 
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO NET/1 :GPU/7000 (5/12.000000/SYS) GPU/46000 (4/12.000000/PHB) GPU/85000 (5/12.000000/SYS) GPU/C7000 (5/12.000000/SYS) CPU/3 (3/12.000000/SYS) CPU/2 (2/12.000000/PHB) CPU/1 (3/12.000000/SYS) CPU/0 (3/12.000000/SYS) NET/1 (0/5000.000000/LOC) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO NET/0 :GPU/7000 (5/12.000000/SYS) GPU/46000 (5/12.000000/SYS) GPU/85000 (5/12.000000/SYS) GPU/C7000 (4/12.000000/PHB) CPU/3 (3/12.000000/SYS) CPU/2 (3/12.000000/SYS) CPU/1 (3/12.000000/SYS) CPU/0 (2/12.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (0/5000.000000/LOC) 
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Pattern 4, crossNic 0, nChannels 2, bw 12.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO  0 : NET/1 GPU/1 GPU/0 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO  1 : NET/0 GPU/1 GPU/0 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Pattern 1, crossNic 0, nChannels 2, bw 24.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO  0 : NET/1 GPU/0 GPU/1 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO  1 : NET/0 GPU/0 GPU/1 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Pattern 3, crossNic 0, nChannels 0, bw 0.000000/0.000000, type NVL/PIX, sameChannels 1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 0 'mlx5_0'
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 1 'mlx5_1'
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO transport/p2p.cc:151 Cuda Alloc Size 2097152 pointer 0x14f4b7800000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO === System : maxBw 12.0 totalBw 264.0 ===
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO CPU/3 (1/2/-1)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + PCI[24.0] - PCI/5000 (11f8406811f8beef)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO               + PCI[24.0] - GPU/7000 (0)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO CPU/2 (1/2/-1)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + PCI[24.0] - PCI/44000 (11f8406811f8beef)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO               + PCI[24.0] - GPU/46000 (1)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + PCI[12.0] - NIC/43000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO               + NET[12.5] - NET/1 (246b02ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO CPU/1 (1/2/-1)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + PCI[24.0] - PCI/83000 (11f8406811f8beef)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO               + PCI[24.0] - GPU/85000 (2)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO CPU/0 (1/2/-1)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + PCI[24.0] - PCI/C5000 (11f8406811f8beef)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO               + PCI[24.0] - GPU/C7000 (3)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO + PCI[12.0] - NIC/C8000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO               + NET[12.5] - NET/0 (348604ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO ==========================================
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU/7000 :GPU/7000 (0/5000.000000/LOC) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (2/24.000000/PHB) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU/46000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (0/5000.000000/LOC) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (2/24.000000/PHB) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (4/12.000000/PHB) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU/85000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (0/5000.000000/LOC) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (2/24.000000/PHB) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU/C7000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (0/5000.000000/LOC) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (2/24.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (4/12.000000/PHB) 
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO NET/1 :GPU/7000 (5/12.000000/SYS) GPU/46000 (4/12.000000/PHB) GPU/85000 (5/12.000000/SYS) GPU/C7000 (5/12.000000/SYS) CPU/3 (3/12.000000/SYS) CPU/2 (2/12.000000/PHB) CPU/1 (3/12.000000/SYS) CPU/0 (3/12.000000/SYS) NET/1 (0/5000.000000/LOC) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO NET/0 :GPU/7000 (5/12.000000/SYS) GPU/46000 (5/12.000000/SYS) GPU/85000 (5/12.000000/SYS) GPU/C7000 (4/12.000000/PHB) CPU/3 (3/12.000000/SYS) CPU/2 (3/12.000000/SYS) CPU/1 (3/12.000000/SYS) CPU/0 (2/12.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (0/5000.000000/LOC) 
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Setting affinity for GPU 3 to 01
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Pattern 4, crossNic 0, nChannels 2, bw 12.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO  0 : NET/1 GPU/1 GPU/0 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO  1 : NET/0 GPU/1 GPU/0 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Pattern 1, crossNic 0, nChannels 2, bw 24.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO  0 : NET/1 GPU/0 GPU/1 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO  1 : NET/0 GPU/0 GPU/1 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Pattern 3, crossNic 0, nChannels 0, bw 0.000000/0.000000, type NVL/PIX, sameChannels 1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 0 'mlx5_0'
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 1 'mlx5_1'
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO transport/p2p.cc:151 Cuda Alloc Size 2097152 pointer 0x153f28000000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO === System : maxBw 12.0 totalBw 264.0 ===
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO CPU/3 (1/2/-1)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + PCI[24.0] - PCI/5000 (11f8406811f8beef)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO               + PCI[24.0] - GPU/7000 (0)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO CPU/2 (1/2/-1)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + PCI[24.0] - PCI/44000 (11f8406811f8beef)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO               + PCI[24.0] - GPU/46000 (1)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + PCI[12.0] - NIC/43000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO               + NET[12.5] - NET/1 (246b02ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO CPU/1 (1/2/-1)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + PCI[24.0] - PCI/83000 (11f8406811f8beef)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO               + PCI[24.0] - GPU/85000 (2)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO CPU/0 (1/2/-1)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + PCI[24.0] - PCI/C5000 (11f8406811f8beef)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO               + PCI[24.0] - GPU/C7000 (3)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO + PCI[12.0] - NIC/C8000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO               + NET[12.5] - NET/0 (348604ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO ==========================================
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU/7000 :GPU/7000 (0/5000.000000/LOC) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (2/24.000000/PHB) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU/46000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (0/5000.000000/LOC) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (2/24.000000/PHB) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (4/12.000000/PHB) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU/85000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (0/5000.000000/LOC) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (2/24.000000/PHB) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU/C7000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (0/5000.000000/LOC) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (2/24.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (4/12.000000/PHB) 
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO NET/1 :GPU/7000 (5/12.000000/SYS) GPU/46000 (4/12.000000/PHB) GPU/85000 (5/12.000000/SYS) GPU/C7000 (5/12.000000/SYS) CPU/3 (3/12.000000/SYS) CPU/2 (2/12.000000/PHB) CPU/1 (3/12.000000/SYS) CPU/0 (3/12.000000/SYS) NET/1 (0/5000.000000/LOC) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO NET/0 :GPU/7000 (5/12.000000/SYS) GPU/46000 (5/12.000000/SYS) GPU/85000 (5/12.000000/SYS) GPU/C7000 (4/12.000000/PHB) CPU/3 (3/12.000000/SYS) CPU/2 (3/12.000000/SYS) CPU/1 (3/12.000000/SYS) CPU/0 (2/12.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (0/5000.000000/LOC) 
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Pattern 4, crossNic 0, nChannels 2, bw 12.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO  0 : NET/1 GPU/1 GPU/0 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO  1 : NET/0 GPU/1 GPU/0 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Pattern 1, crossNic 0, nChannels 2, bw 24.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO  0 : NET/1 GPU/0 GPU/1 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO  1 : NET/0 GPU/0 GPU/1 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Pattern 3, crossNic 0, nChannels 0, bw 0.000000/0.000000, type NVL/PIX, sameChannels 1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 0 'mlx5_0'
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO NET/IB : GPU Direct RDMA Enabled for HCA 1 'mlx5_1'
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO transport/p2p.cc:151 Cuda Alloc Size 2097152 pointer 0x14a233800000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 85000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO === System : maxBw 12.0 totalBw 264.0 ===
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO CPU/3 (1/2/-1)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + PCI[24.0] - PCI/5000 (11f8406811f8beef)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO               + PCI[24.0] - GPU/7000 (0)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO CPU/2 (1/2/-1)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + PCI[24.0] - PCI/44000 (11f8406811f8beef)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO               + PCI[24.0] - GPU/46000 (1)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + PCI[12.0] - NIC/43000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO               + NET[12.5] - NET/1 (246b02ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO CPU/1 (1/2/-1)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + PCI[24.0] - PCI/83000 (11f8406811f8beef)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO               + PCI[24.0] - GPU/85000 (2)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/C7000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO CPU/0 (1/2/-1)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/3
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/2
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + SYS[5000.0] - CPU/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + PCI[24.0] - PCI/C5000 (11f8406811f8beef)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO               + PCI[24.0] - GPU/C7000 (3)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/85000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/46000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO                             + NVL[88.0] - GPU/7000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO + PCI[12.0] - NIC/C8000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO               + NET[12.5] - NET/0 (348604ffffa4e988/1/12.500000)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO ==========================================
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU/7000 :GPU/7000 (0/5000.000000/LOC) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (2/24.000000/PHB) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU/46000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (0/5000.000000/LOC) GPU/85000 (1/88.000000/NVL) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (2/24.000000/PHB) CPU/1 (3/24.000000/SYS) CPU/0 (3/24.000000/SYS) NET/1 (4/12.000000/PHB) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU/85000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (0/5000.000000/LOC) GPU/C7000 (1/88.000000/NVL) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (2/24.000000/PHB) CPU/0 (3/24.000000/SYS) NET/1 (5/12.000000/SYS) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU/C7000 :GPU/7000 (1/88.000000/NVL) GPU/46000 (1/88.000000/NVL) GPU/85000 (1/88.000000/NVL) GPU/C7000 (0/5000.000000/LOC) CPU/3 (3/24.000000/SYS) CPU/2 (3/24.000000/SYS) CPU/1 (3/24.000000/SYS) CPU/0 (2/24.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (4/12.000000/PHB) 
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO NET/1 :GPU/7000 (5/12.000000/SYS) GPU/46000 (4/12.000000/PHB) GPU/85000 (5/12.000000/SYS) GPU/C7000 (5/12.000000/SYS) CPU/3 (3/12.000000/SYS) CPU/2 (2/12.000000/PHB) CPU/1 (3/12.000000/SYS) CPU/0 (3/12.000000/SYS) NET/1 (0/5000.000000/LOC) NET/0 (5/12.000000/SYS) 
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO NET/0 :GPU/7000 (5/12.000000/SYS) GPU/46000 (5/12.000000/SYS) GPU/85000 (5/12.000000/SYS) GPU/C7000 (4/12.000000/PHB) CPU/3 (3/12.000000/SYS) CPU/2 (3/12.000000/SYS) CPU/1 (3/12.000000/SYS) CPU/0 (2/12.000000/PHB) NET/1 (5/12.000000/SYS) NET/0 (0/5000.000000/LOC) 
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Pattern 4, crossNic 0, nChannels 2, bw 12.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO  0 : NET/1 GPU/1 GPU/0 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO  1 : NET/0 GPU/1 GPU/0 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Pattern 1, crossNic 0, nChannels 2, bw 24.000000/12.000000, type NVL/SYS, sameChannels 1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO  0 : NET/1 GPU/0 GPU/1 GPU/2 GPU/3 NET/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO  1 : NET/0 GPU/0 GPU/1 GPU/2 GPU/3 NET/0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Pattern 3, crossNic 0, nChannels 0, bw 0.000000/0.000000, type NVL/PIX, sameChannels 1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Tree 0 : 0 -> 1 -> 2/-1/-1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Tree 2 : 0 -> 1 -> 2/12/-1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Tree 1 : 0 -> 1 -> 2/-1/-1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Tree 3 : 0 -> 1 -> 2/12/-1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Ring 00 : 19 -> 1 -> 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Ring 01 : 19 -> 1 -> 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Ring 02 : 19 -> 1 -> 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Ring 03 : 19 -> 1 -> 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/12/-1->1->0 [3] 2/12/-1->1->0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14a233800000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14a233802000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14a233802200
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14a233804200
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14a233804400
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14a233806400
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14a233806600
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14a233808600
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO Mem Realloc old size 0, new size 8 pointer 0x14a224000c60
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO Allocated 4194656 bytes of shared memory in /dev/shm/nccl-tXPkXt
+
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 0 from local rank 1, transport 2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Ring 00 : 0 -> 2 -> 3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Ring 01 : 0 -> 2 -> 3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Ring 02 : 0 -> 2 -> 3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Ring 03 : 0 -> 2 -> 3
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x147f65800000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x147f65802000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x147f65802200
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x147f65804200
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x147f65804400
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x147f65806400
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x147f65806600
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x147f65808600
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 00/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Ring 00 : 2 -> 3 -> 5
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Ring 01 : 2 -> 3 -> 5
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Ring 02 : 2 -> 3 -> 5
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Ring 03 : 2 -> 3 -> 5
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14f4b7800000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14f4b7802000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14f4b7802200
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14f4b7804200
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14f4b7804400
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14f4b7806400
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x14f4b7806600
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x14f4b7808600
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO Mem Realloc old size 0, new size 8 pointer 0x147f60000c60
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 0 from local rank 2, transport 0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO Mem Realloc old size 0, new size 8 pointer 0x14f4a8000c60
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy recv connection 0 from local rank 3, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000c80
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14f4b7a00000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000c80
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f65a00000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000c80
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 01/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 1 from local rank 2, transport 0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy recv connection 1 from local rank 3, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 00/0 : 19[c7000] -> 1[46000] [receive] via NET/IB/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 1 from local rank 1, transport 2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000cc0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000cc0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000cc0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14f4ae000000
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f5a000000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 02/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 2 from local rank 2, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 01/0 : 19[c7000] -> 1[46000] [receive] via NET/IB/0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy recv connection 2 from local rank 3, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Tree 0 : -1 -> 0 -> 1/16/-1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Tree 2 : 4 -> 0 -> 1/-1/-1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Tree 1 : -1 -> 0 -> 1/16/-1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Tree 3 : 4 -> 0 -> 1/-1/-1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 00/04 :    0   2   3   5   4   6   7   9   8  10  11  13  12  14  15  17  16  18  19   1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 01/04 :    0   2   3   5   4   6   7   9   8  10  11  13  12  14  15  17  16  18  19   1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 02/04 :    0   2   3   5   4   6   7   9   8  10  11  13  12  14  15  17  16  18  19   1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 03/04 :    0   2   3   5   4   6   7   9   8  10  11  13  12  14  15  17  16  18  19   1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Ring 00 : 1 -> 0 -> 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Ring 01 : 1 -> 0 -> 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Ring 02 : 1 -> 0 -> 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Ring 03 : 1 -> 0 -> 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Trees [0] 1/16/-1->0->-1 [1] 1/16/-1->0->-1 [2] 1/-1/-1->0->4 [3] 1/-1/-1->0->4
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x153f28000000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x153f28002000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x153f28002200
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x153f28004200
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x153f28004400
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x153f28006400
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:23 Cuda Alloc Size 8064 pointer 0x153f28006600
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO channel.cc:27 Cuda Alloc Size 80 pointer 0x153f28008600
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 00/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000d00
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f5a600000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO Mem Realloc old size 0, new size 8 pointer 0x153edc000c60
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 0 from local rank 0, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000c80
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f28200000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 01/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 2 from local rank 1, transport 2
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000d00
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000d00
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14f4ae600000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 03/0 : 2[85000] -> 3[c7000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 3 from local rank 2, transport 0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 1 from local rank 0, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 02/0 : 19[c7000] -> 1[46000] [receive] via NET/IB/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 3 from local rank 1, transport 2
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy recv connection 3 from local rank 3, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000d40
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f5ac00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000cc0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f28800000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000d40
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000d40
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14f4aec00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 02/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 2 from local rank 0, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 03/0 : 19[c7000] -> 1[46000] [receive] via NET/IB/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO Allocated 4194656 bytes of shared memory in /dev/shm/nccl-mn3BIA
+
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 4 from local rank 3, transport 2
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 4 from local rank 2, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000d80
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000d00
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f28e00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 03/0 : 0[7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 3 from local rank 0, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000d80
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 00/0 : 3[c7000] -> 5[46000] [send] via NET/IB/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 5 from local rank 3, transport 2
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f58c00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000d40
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f29400000
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 5 from local rank 2, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000dc0
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f59200000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000dc0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 01/0 : 3[c7000] -> 5[46000] [send] via NET/IB/0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 6 from local rank 3, transport 2
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000e00
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 02/0 : 3[c7000] -> 5[46000] [send] via NET/IB/1
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO GPU Direct RDMA Disabled for GPU c7000 / HCA 0 (distance 6 > 4)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 7 from local rank 3, transport 2
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 6 from local rank 2, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000e40
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 03/0 : 3[c7000] -> 5[46000] [send] via NET/IB/0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x14f4a8020000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000e00
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f59800000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO NET/IB: Dev 1 Port 1 qpn 3343 mtu 5 GID 0 (80FE/BC0800FEFF000000)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x14f4a8042000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x14f4a6c00000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO Mem Realloc old size 0, new size 768 pointer 0x14f4a802f0a0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x14f4a8044000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO NET/IB: Dev 0 Port 1 qpn 4251 mtu 5 GID 0 (80FE/FD0800FEFF000000)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x14f4a8065000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x14f4a7600000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO Mem Realloc old size 0, new size 768 pointer 0x14f4a80521f0
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 7 from local rank 2, transport 0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x14f4a8067000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000e40
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f56000000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x14a22401d000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO NET/IB: Dev 1 Port 1 qpn 3344 mtu 5 GID 0 (80FE/BC0800FEFF000000)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x14f4a807e000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x14f49e000000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connected all rings
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 8 from local rank 2, transport 0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 4 from local rank 0, transport 0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x14f4a8080000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x14a224024000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO NET/IB: Dev 0 Port 1 qpn 4252 mtu 5 GID 0 (80FE/FD0800FEFF000000)
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x14f4a8097000
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x14f49ea00000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x14a22404b000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x14a222000000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO Mem Realloc old size 0, new size 768 pointer 0x14a2240406b0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000d80
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x153f2b200000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connected all rings
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 00/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 8 from local rank 3, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000e80
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f54000000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 5 from local rank 0, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000e80
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14f49f400000
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 9 from local rank 2, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000dc0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x153f2b800000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x14a22404d000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x14a224054000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 6 from local rank 0, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 01/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 9 from local rank 3, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000ec0
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f54600000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x14a224079000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x14a222a00000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO Mem Realloc old size 0, new size 768 pointer 0x14a22406e880
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000ec0
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14f49fa00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000e00
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x153f2be00000
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 10 from local rank 2, transport 0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x14a22407b000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x14a224082000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 7 from local rank 0, transport 0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x14a22409d000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x14a223400000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x14a22409f000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x14a2240a6000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 02/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 10 from local rank 3, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000e40
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000f00
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f54c00000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x153f2c400000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x14a2240c1000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x14a220000000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 00/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 4 from local rank 1, transport 0
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 11 from local rank 2, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000f00
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14f49c000000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000d80
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a220a00000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000f40
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f55200000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Channel 03/0 : 3[c7000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 11 from local rank 3, transport 0
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000f40
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14f49c600000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 01/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 5 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000dc0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a221000000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 02/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 6 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000e00
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a221600000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 03/0 : 1[46000] -> 0[7000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 7 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000e40
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a233a00000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connected all rings
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 8 from local rank 1, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connected all rings
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 00/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 8 from local rank 0, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000e80
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f2e200000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000e80
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a21f800000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 01/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 9 from local rank 0, transport 0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 9 from local rank 1, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000ec0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f2e800000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 02/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000ec0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a21c000000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 10 from local rank 0, transport 0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 10 from local rank 1, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000f00
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f2ee00000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000f00
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a21c600000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 03/0 : 0[7000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 11 from local rank 0, transport 0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 11 from local rank 1, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000f40
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x153f2f400000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000f40
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a21cc00000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 00/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 12 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000f80
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a21d200000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 01/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 13 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224000fc0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a21d800000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 02/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 14 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a21a000000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 03/0 : 1[46000] -> 2[85000] via P2P/IPC/read
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 15 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001040
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x14a21a600000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 12 from local rank 2, transport 0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 16 from local rank 1, transport 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO Allocated 4194656 bytes of shared memory in /dev/shm/nccl-U8o5kn
+
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 12 from local rank 0, transport 2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000f80
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f53200000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000f80
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001080
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 13 from local rank 2, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60000fc0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 00/0 : 16[7000] -> 0[7000] [receive] via NET/IB/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 13 from local rank 0, transport 2
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 02/0 : 12[7000] -> 1[46000] [receive] via NET/IB/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 17 from local rank 1, transport 2
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f53800000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc000fc0
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 14 from local rank 2, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a2240010c0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 03/0 : 12[7000] -> 1[46000] [receive] via NET/IB/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 01/0 : 16[7000] -> 0[7000] [receive] via NET/IB/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 14 from local rank 0, transport 2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60001000
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f50000000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc001000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 02/0 : 0[7000] -> 4[7000] [send] via NET/IB/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 15 from local rank 0, transport 2
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy recv connection 15 from local rank 2, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60001040
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x147f50600000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc001040
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 03/0 : 0[7000] -> 4[7000] [send] via NET/IB/0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x153edc025000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO NET/IB: Dev 1 Port 1 qpn 3349 mtu 5 GID 0 (80FE/BC0800FEFF000000)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x153edc047000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x153f31200000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO Mem Realloc old size 0, new size 768 pointer 0x153edc034320
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 00/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 16 from local rank 2, transport 0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x153edc049000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO NET/IB: Dev 0 Port 1 qpn 4259 mtu 5 GID 0 (80FE/FD0800FEFF000000)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x153edc06a000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x153f31c00000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO Mem Realloc old size 0, new size 768 pointer 0x153edc057760
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x153edc06c000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60001080
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f50c00000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 01/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 17 from local rank 2, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f600010c0
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f51200000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x153edc073000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 02/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 18 from local rank 2, transport 0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x153edc08f000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x153f32600000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60001100
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f51800000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x153edc091000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x153edc098000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x153edc0b3000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x153f33000000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Channel 03/0 : 2[85000] -> 1[46000] via P2P/IPC/read
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 19 from local rank 2, transport 0
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60001140
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/p2p.cc:430 Cuda Alloc Size 6291456 pointer 0x147f4e000000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connected all trees by HAO
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO threadThresholds 8/8/64 | 160/8/64 | 512 | 512
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO 4 coll channels, 4 p2p channels, 2 p2p channels per peer
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 16 from local rank 0, transport 2
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO New proxy send connection 12 from local rank 3, transport 2
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO Connection to proxy localRank 3 -> connection 0x14f4a8000f80
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO transport/net.cc:376 Cuda Alloc Size 8388608 pointer 0x14f49a600000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc001080
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 02/0 : 4[7000] -> 0[7000] [receive] via NET/IB/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy recv connection 17 from local rank 0, transport 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc0010c0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 03/0 : 4[7000] -> 0[7000] [receive] via NET/IB/0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 1 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 18 from local rank 0, transport 2
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc001100
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 00/0 : 0[7000] -> 16[7000] [send] via NET/IB/1
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO GPU Direct RDMA Disabled for GPU 7000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 19 from local rank 0, transport 2
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x14a2240d2000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x14a224019000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc001140
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Channel 01/0 : 0[7000] -> 16[7000] [send] via NET/IB/0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x14a2240f2000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x14a216000000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x14a2240f4000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x14a2240fb000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x14a224116000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x14a216a00000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 1 (distance 6 > 4)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 18 from local rank 1, transport 2
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001100
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 02/0 : 1[46000] -> 12[7000] [send] via NET/IB/1
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO GPU Direct RDMA Disabled for GPU 46000 / HCA 0 (distance 7 > 4)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 19 from local rank 1, transport 2
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x153edc0c9000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO NET/IB: Dev 1 Port 1 qpn 3354 mtu 5 GID 0 (80FE/BC0800FEFF000000)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x153edc0e0000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x153f33a00000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x153edc0e2000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001140
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Channel 03/0 : 1[46000] -> 12[7000] [send] via NET/IB/0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO NET/IB: Dev 0 Port 1 qpn 4265 mtu 5 GID 0 (80FE/FD0800FEFF000000)
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x153edc0f9000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x153f34400000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x14a224122000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x153edc0fb000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x153edc102000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO NET/IB: Dev 1 Port 1 qpn 3355 mtu 5 GID 0 (80FE/BC0800FEFF000000)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x14a224139000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x14a217400000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x153edc11d000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x153f34e00000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:596 Ib Alloc Size 26560 pointer 0x14a22413b000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO NET/IB: Dev 0 Port 1 qpn 4266 mtu 5 GID 0 (80FE/FD0800FEFF000000)
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net_ib.cc:653 Ib Alloc Size 552 pointer 0x14a224152000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:571 Cuda Host Alloc Size 9641984 pointer 0x14a214000000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:683 Ib Alloc Size 21688 pointer 0x153edc11f000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:696 Ib Alloc Size 552 pointer 0x153edc126000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 20 from local rank 1, transport 0
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net_ib.cc:771 Ib Alloc Size 552 pointer 0x153edc141000
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:698 Cuda Host Alloc Size 9641984 pointer 0x153f35800000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001180
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a214a00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connected all trees by HAO
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Latency/AlgBw |    Tree/    LL |    Tree/ LL128 |    Tree/Simple |    Ring/    LL |    Ring/ LL128 |    Ring/Simple | CollNetDirect/    LL | CollNetDirect/ LL128 | CollNetDirect/Simple | CollNetChain/    LL | CollNetChain/ LL128 | CollNetChain/Simple |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO  Max NThreads |            512 |            640 |            512 |            512 |            640 |            512 |              0 |              0 |            512 |              0 |              0 |            512 |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO     Broadcast |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     6.3/   6.0 |    14.0/   0.0 |    18.0/  24.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO        Reduce |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     6.3/   6.0 |    14.0/   0.0 |    18.0/  24.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO     AllGather |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |    27.1/   6.3 |    54.5/   0.0 |    97.8/  25.3 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO ReduceScatter |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |    27.1/   6.3 |    54.5/   0.0 |    97.8/  25.3 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |     0.0/   0.0 |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO     AllReduce |    30.0/   2.9 |    45.9/   0.0 |   280.0/  11.0 |    54.3/   3.2 |   103.2/   0.0 |   199.6/  12.6 |     7.4/   0.0 |     7.4/   0.0 |    29.7/   0.0 |     4.4/   0.0 |     4.4/   0.0 |    48.0/   0.0 |
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO threadThresholds 8/8/64 | 160/8/64 | 512 | 512
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO 4 coll channels, 4 p2p channels, 2 p2p channels per peer
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO New proxy send connection 20 from local rank 0, transport 2
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 21 from local rank 1, transport 0
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO Connection to proxy localRank 0 -> connection 0x153edc001180
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO transport/net.cc:376 Cuda Alloc Size 8388608 pointer 0x153f36200000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a2240011c0
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a215000000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 22 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001200
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a215600000
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy recv connection 23 from local rank 1, transport 0
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001240
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/p2p.cc:449 Cuda Alloc Size 6291456 pointer 0x14a212000000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connected all trees by HAO
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO threadThresholds 8/8/64 | 160/8/64 | 512 | 512
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO 4 coll channels, 4 p2p channels, 2 p2p channels per peer
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connected all trees by HAO
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO threadThresholds 8/8/64 | 160/8/64 | 512 | 512
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO 4 coll channels, 4 p2p channels, 2 p2p channels per peer
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO Allocated 4194656 bytes of shared memory in /dev/shm/nccl-TW07Ww
+
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO New proxy send connection 20 from local rank 2, transport 2
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO New proxy send connection 24 from local rank 1, transport 2
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO Connection to proxy localRank 2 -> connection 0x147f60001180
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO transport/net.cc:376 Cuda Alloc Size 8388608 pointer 0x147f4d800000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO Connection to proxy localRank 1 -> connection 0x14a224001280
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO init.cc:367 Cuda Alloc Size 5168 pointer 0x14a233808800
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO init.cc:367 Cuda Alloc Size 5168 pointer 0x14f4b7808800
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO init.cc:367 Cuda Alloc Size 5168 pointer 0x147f65808800
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO init.cc:367 Cuda Alloc Size 5168 pointer 0x153f28008800
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO init.cc:392 Cuda Host Alloc Size 33554432 pointer 0x153f36a00000
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO init.cc:398 Cuda Host Alloc Size 128 pointer 0x153f27600200
+x3006c0s31b1n0:59858:60952 [0] NCCL INFO comm 0x55f3aae3dc60 rank 0 nranks 20 cudaDev 0 busId 7000 - Init COMPLETE
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO init.cc:392 Cuda Host Alloc Size 33554432 pointer 0x14f498000000
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO init.cc:398 Cuda Host Alloc Size 128 pointer 0x14f4b6e00200
+x3006c0s31b1n0:59861:60992 [3] NCCL INFO comm 0x5605ac1641d0 rank 3 nranks 20 cudaDev 3 busId c7000 - Init COMPLETE
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO init.cc:392 Cuda Host Alloc Size 33554432 pointer 0x147f4a000000
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO init.cc:398 Cuda Host Alloc Size 128 pointer 0x147f64e00200
+x3006c0s31b1n0:59860:60990 [2] NCCL INFO comm 0x55cc22801a50 rank 2 nranks 20 cudaDev 2 busId 85000 - Init COMPLETE
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO AllReduce: opCount 0 sendbuff 0x14f4f7600200 recvbuff 0x14f4f7600200 count 1 datatype 1 op 0 root 0 comm 0x5605ac1641d0 [nranks=20] stream 0x5605c473b130
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4x3006c0s31b1n0:59860:59860 [2] NCCL INFO AllReduce: opCount 0 sendbuff 0x147fa3600200 recvbuff 0x147fa3600200 count 1 datatype 1 op 0 root 0 comm 0x55cc22801a50 [nranks=20] stream 0x55cc3f0c85d0
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4[Hao INFO in ncclAllReduce (all_reduce.cc)] rank 0 ncclAllReduce: count: 1, datatype: ncclUint8, message size: 1 Bytes
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO AllReduce: opCount 0 sendbuff 0x153f23c00200 recvbuff 0x153f23c00200 count 1 datatype 1 op 0 root 0 comm 0x55f3aae3dc60 [nranks=20] stream 0x55f3c8d14f40
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+
+[LYD INFO in ncclAllReduce (all_reduce.cc)] rank 0 AllReduce Time: 0.000047000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000015000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x153f23c00200
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x153f23c00200
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 2
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 96
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4x3006c0s31b1n0:59859:60989 [1] NCCL INFO init.cc:392 Cuda Host Alloc Size 33554432 pointer 0x14a210000000
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO init.cc:398 Cuda Host Alloc Size 128 pointer 0x14a232e00200
+x3006c0s31b1n0:59859:60989 [1] NCCL INFO comm 0x55e4cbf22a00 rank 1 nranks 20 cudaDev 1 busId 46000 - Init COMPLETE
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO transport/net.cc:376 Cuda Alloc Size 8388608 pointer 0x14a20e000000
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO AllReduce: opCount 0 sendbuff 0x14a273600200 recvbuff 0x14a273600200 count 1 datatype 1 op 0 root 0 comm 0x55e4cbf22a00 [nranks=20] stream 0x55e4e4f6f0a0
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO misc/utils.cc:235 memory stack hunk malloc(65536)
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 AllReduce TREE LL Sum uint8_t Elapsed time: 522524 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 AllReduce TREE LL Sum uint8_t Elapsed time: 503919 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 AllReduce TREE LL Sum uint8_t Elapsed time: 522798 us
+[Hao INFO in ncclAllReduce (all_reduce.cc)] rank 0 ncclAllReduce: count: 1, datatype: ncclUint8, message size: 1 Bytes
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO AllReduce: opCount 1 sendbuff 0x153f23c00000 recvbuff 0x153f23c00000 count 1 datatype 1 op 0 root 0 comm 0x55f3aae3dc60 [nranks=20] stream 0x55f3c8d14f40
+
+[LYD INFO in ncclAllReduce (all_reduce.cc)] rank 0 AllReduce Time: 0.000033000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000013000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x153f23c00000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x153f23c00000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 2
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 96
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 AllReduce TREE LL Sum uint8_t Elapsed time: 455694 us
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO AllReduce: opCount 1 sendbuff 0x147fa3600000 recvbuff 0x147fa3600000 count 1 datatype 1 op 0 root 0 comm 0x55cc22801a50 [nranks=20] stream 0x55cc3f0c85d0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4x3006c0s31b1n0:59859:59859 [1] NCCL INFO AllReduce: opCount 1 sendbuff 0x14a273600000 recvbuff 0x14a273600000 count 1 datatype 1 op 0 root 0 comm 0x55e4cbf22a00 [nranks=20] stream 0x55e4e4f6f0a0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4x3006c0s31b1n0:59861:59861 [3] NCCL INFO AllReduce: opCount 1 sendbuff 0x14f4f7600000 recvbuff 0x14f4f7600000 count 1 datatype 1 op 0 root 0 comm 0x5605ac1641d0 [nranks=20] stream 0x5605c473b130
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 AllReduce TREE LL Sum uint8_t Elapsed time: 2354052 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 AllReduce TREE LL Sum uint8_t Elapsed time: 1493954 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 AllReduce TREE LL Sum uint8_t Elapsed time: 367027 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 AllReduce TREE LL Sum uint8_t Elapsed time: 8668716 us
+>>> done with compiling and loading fused kernels. Compilation time: 25.915 seconds
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO AllReduce: opCount 2 sendbuff 0x14a273600000 recvbuff 0x14a273600000 count 1 datatype 8 op 3 root 0 comm 0x55e4cbf22a00 [nranks=20] stream 0x55e4e4f6f0a0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4x3006c0s31b1n0:59860:59860 [2] NCCL INFO AllReduce: opCount 2 sendbuff 0x147fa3600000 recvbuff 0x147fa3600000 count 1 datatype 8 op 3 root 0 comm 0x55cc22801a50 [nranks=20] stream 0x55cc3f0c85d0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4x3006c0s31b1n0:59861:59861 [3] NCCL INFO AllReduce: opCount 2 sendbuff 0x14f4f7600000 recvbuff 0x14f4f7600000 count 1 datatype 8 op 3 root 0 comm 0x5605ac1641d0 [nranks=20] stream 0x5605c473b130
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4[Hao INFO in ncclAllReduce (all_reduce.cc)] rank 0 ncclAllReduce: count: 1, datatype: ncclFloat64/ncclDouble, message size: 8 Bytes
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO AllReduce: opCount 2 sendbuff 0x153f23c00000 recvbuff 0x153f23c00000 count 1 datatype 8 op 3 root 0 comm 0x55f3aae3dc60 [nranks=20] stream 0x55f3c8d14f40
+
+[LYD INFO in ncclAllReduce (all_reduce.cc)] rank 0 AllReduce Time: 0.000038000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000014000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000000000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x153f23c00000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x153f23c00000
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 8
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 2
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 96
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 8
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_FUNC_NAME (common.h)] 0 AllReduce TREE LL Min double Elapsed time: 2099 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 AllReduce TREE LL Sum double Elapsed time: 2195 us
+time to initialize megatron (seconds): 33.474
+[Hao INFO in ncclAllReduce (all_reduce.cc)] rank 0 ncclAllReduce: count: 1, datatype: ncclUint8, message size: 1 Bytes
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO AllReduce: opCount 3 sendbuff 0x153f23c00200 recvbuff 0x153f23c00200 count 1 datatype 1 op 0 root 0 comm 0x55f3aae3dc60 [nranks=20] stream 0x55f3c8d14f40
+
+[LYD INFO in ncclAllReduce (all_reduce.cc)] rank 0 AllReduce Time: 0.000022000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 0
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] algorithm a is: 1
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank: 0, Duration between Point 1 and Point 2: 0.000013000 seconds
+
+[LYD INFO in getAlgoInfo (enqueue.cc)] rank 0, Duration between Point 2 and Point 3: 0.000001000 seconds
+[LYD INFO in getAlgoInfo (enqueue.cc)] out rank: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out coll: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sendbuff address: 0x153f23c00200
+[LYD INFO in getAlgoInfo (enqueue.cc)] out recvbuff address: 0x153f23c00200
+[LYD INFO in getAlgoInfo (enqueue.cc)] out count: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out datatype: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSteps: 4
+[LYD INFO in getAlgoInfo (enqueue.cc)] out sliceSteps: 2
+[LYD INFO in getAlgoInfo (enqueue.cc)] out algorithm: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out protocol: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nChannels: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nThreads: 96
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nBytes: 1
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nstepsPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out nchunksPerLoop: 0
+[LYD INFO in getAlgoInfo (enqueue.cc)] out chunkSize: 0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_FUNC_NAME (common.h)] 1 AllReduce TREE LL Min double Elapsed time: 21045 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 AllReduce TREE LL Sum double Elapsed time: 28354 us
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO AllReduce: opCount 3 sendbuff 0x14a273600200 recvbuff 0x14a273600200 count 1 datatype 1 op 0 root 0 comm 0x55e4cbf22a00 [nranks=20] stream 0x55e4e4f6f0a0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_FUNC_NAME (common.h)] 3 AllReduce TREE LL Min double Elapsed time: 4 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 AllReduce TREE LL Sum double Elapsed time: 7308 us
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO AllReduce: opCount 3 sendbuff 0x14f4f7600200 recvbuff 0x14f4f7600200 count 1 datatype 1 op 0 root 0 comm 0x5605ac1641d0 [nranks=20] stream 0x5605c473b130
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_FUNC_NAME (common.h)] 2 AllReduce TREE LL Min double Elapsed time: 9716 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 AllReduce TREE LL Sum double Elapsed time: 17027 us
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO AllReduce: opCount 3 sendbuff 0x147fa3600200 recvbuff 0x147fa3600200 count 1 datatype 1 op 0 root 0 comm 0x55cc22801a50 [nranks=20] stream 0x55cc3f0c85d0
+[LYD INFO in ncclLaunchKernel (enqueue.cc)] NCHANNELS is: 4
+[LYD INFO in NCCL_KERN_NAME (common.h)] 1 AllReduce TREE LL Sum uint8_t Elapsed time: 47387 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 2 AllReduce TREE LL Sum uint8_t Elapsed time: 28532 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 3 AllReduce TREE LL Sum uint8_t Elapsed time: 35795 us
+
+[LYD INFO in NCCL_KERN_NAME (common.h)] 0 AllReduce TREE LL Sum uint8_t Elapsed time: 55416 us
+[after megatron is initialized] datetime: 2023-11-04 03:54:55 
+building T5 model ...
+x3006c0s31b1n0:59861:61133 [3] NCCL INFO [Service thread] Connection closed by localRank 3
+x3006c0s31b1n0:59859:61179 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+x3006c0s31b1n0:59860:61130 [2] NCCL INFO [Service thread] Connection closed by localRank 2
+x3006c0s31b1n0:59860:59860 [2] NCCL INFO comm 0x55cc22801a50 rank 2 nranks 20 cudaDev 2 busId 85000 - Abort COMPLETE
+x3006c0s31b1n0:59861:59861 [3] NCCL INFO comm 0x5605ac1641d0 rank 3 nranks 20 cudaDev 3 busId c7000 - Abort COMPLETE
+x3006c0s31b1n0:59859:59859 [1] NCCL INFO comm 0x55e4cbf22a00 rank 1 nranks 20 cudaDev 1 busId 46000 - Abort COMPLETE
+x3006c0s31b1n0:59858:61178 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+x3006c0s31b1n0:59858:59858 [0] NCCL INFO comm 0x55f3aae3dc60 rank 0 nranks 20 cudaDev 0 busId 7000 - Abort COMPLETE
