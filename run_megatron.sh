@@ -178,7 +178,7 @@ export DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
 
 
 
-iostat -x 1 /dev/nvme0n1 /dev/nvme1n1 > /home/yuke/lyd/tmp-file/logs/iostat-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv 1 &
+iostat -x 1 /dev/nvme0n1 /dev/nvme1n1 > /home/yuke/lyd/tmp-file/logs/iostat-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv &
 IO_PID=$!
 
 dool --time --mem --cpu --net -N hsn0,hsn1,lo,total --output /home/yuke/lyd/tmp-file/logs/dool-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv 1 &
