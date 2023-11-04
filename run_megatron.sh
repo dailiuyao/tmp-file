@@ -225,7 +225,7 @@ else
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_t5.py --num-layers 24 --hidden-size 1024 \
     --tensor-model-parallel-size ${TP} \
     --pipeline-model-parallel-size ${PP} \
-    --pipeline-model-parallel-split-rank $(($GPUS_PER_NODE*$NNODES/2)) \
+    --pipeline-model-parallel-split-rank $(($PP/2)) \
     --num-attention-heads 16 --kv-channels 64 --ffn-hidden-size 3072 --encoder-seq-length 512 --decoder-seq-length 128 --max-position-embeddings 512 \
     --lr 0.0001 --lr-decay-iters 49 --train-iters 100 --min-lr 0.00001 --lr-warmup-fraction 0.01 \
     --micro-batch-size $MICRO_BATCH_SIZE_T5 --global-batch-size $GLOBAL_BATCH_SIZE_T5 \
