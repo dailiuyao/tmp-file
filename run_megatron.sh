@@ -49,8 +49,10 @@ cd /home/yuke/lyd/Megatron-LM
 
 
 
-rm -rf ./checkpoints/
+rm -rf /home/yuke/lyd/Megatron-LM/checkpoints/
 rm -rf /local/scratch/checkpoints/
+cd /local/scratch
+
 
 export GPUS_PER_NODE=4
 
@@ -192,7 +194,7 @@ sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn1 > /home/yuke/lyd/tmp-file
 RTOP2_PID=$!
 
 if [ "$MODEL" = "gpt2" ]; then
-    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_gpt.py \
     --tensor-model-parallel-size ${TP} \
     --pipeline-model-parallel-size ${PP} \
     --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
@@ -201,7 +203,7 @@ if [ "$MODEL" = "gpt2" ]; then
     --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
     --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 elif [ "$MODEL" = "bert" ]; then
-    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_bert.py \
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_bert.py \
     --tensor-model-parallel-size ${TP} \
     --pipeline-model-parallel-size ${PP} \
     --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --max-position-embeddings 512 \
@@ -211,7 +213,7 @@ elif [ "$MODEL" = "bert" ]; then
     --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
     --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 elif [ "$MODEL" = "gpt2large" ]; then
-    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_gpt.py \
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_gpt.py \
     --tensor-model-parallel-size ${TP} \
     --pipeline-model-parallel-size ${PP} \
     --num-layers 40 --hidden-size 1280 --num-attention-heads 20 --seq-length 512 --max-position-embeddings 512 \
@@ -220,7 +222,7 @@ elif [ "$MODEL" = "gpt2large" ]; then
     --log-interval 1 --save-interval 50 --eval-interval 10 --eval-iters 1 --save $CHECKPOINT_PATH --load $CHECKPOINT_PATH \
     --data-path $DATA_PATH > /home/yuke/lyd/tmp-file/logs/megatron-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE}-DP${DP}-TP${TP}-PP${PP}.out
 else
-    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS pretrain_t5.py --num-layers 24 --hidden-size 1024 \
+    /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_t5.py --num-layers 24 --hidden-size 1024 \
     --tensor-model-parallel-size ${TP} \
     --pipeline-model-parallel-size ${PP} \
     --pipeline-model-parallel-split-rank $(($GPUS_PER_NODE*$NNODES/2)) \
@@ -235,7 +237,7 @@ fi
 
 cd /home/yuke/lyd/Megatron-LM
 
-rm -rf ./checkpoints/
+rm -rf /home/yuke/lyd/Megatron-LM/checkpoints/
 rm -rf /local/scratch/checkpoints/
 
 echo "Training done on Node$NODE_RANK"
