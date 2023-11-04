@@ -87,12 +87,12 @@ elif [ "$MODEL" = "bert" ]; then
 	export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/bert-large-cased-vocab.txt
 	export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-bert_text_sentence
 elif [ "$MODEL" = "gpt2large" ]; then
-    export CHECKPOINT_PATH=/local/scratch/checkpoints/gpt2_774m
-	cp /home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json /local/scratch/gpt2-vocab.json
+    export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/gpt2_774m
+	#cp /home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json /local/scratch/gpt2-vocab.json
     export VOCAB_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-vocab.json
-	cp /home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt /local/scratch/gpt2-merges.txt
+	#cp /home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt /local/scratch/gpt2-merges.txt
     export MERGE_FILE=/home/yuke/lyd/Megatron-LM/model/gpt2-merges.txt
-	cp /home/yuke/lyd/Megatron-LM/my-gpt2_text_document* /local/scratch
+	#cp /home/yuke/lyd/Megatron-LM/my-gpt2_text_document* /local/scratch
     export DATA_PATH=/home/yuke/lyd/Megatron-LM/my-gpt2_text_document  
 else
     export CHECKPOINT_PATH=/home/yuke/lyd/Megatron-LM/checkpoints/t5_base
