@@ -1,0 +1,884 @@
+# nThread 1 nGpus 1 minBytes 8 maxBytes 1073741824 step: 2(factor) warmup iters: 5 iters: 100 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  21163 on ip-10-0-33-54 device  0 [0x00] NVIDIA A10G
+#  Rank  1 Group  0 Pid  21164 on ip-10-0-33-54 device  1 [0x00] NVIDIA A10G
+#  Rank  2 Group  0 Pid  21165 on ip-10-0-33-54 device  2 [0x00] NVIDIA A10G
+#  Rank  3 Group  0 Pid  21166 on ip-10-0-33-54 device  3 [0x00] NVIDIA A10G
+#  Rank  4 Group  0 Pid  21167 on ip-10-0-33-54 device  4 [0x00] NVIDIA A10G
+#  Rank  5 Group  0 Pid  21168 on ip-10-0-33-54 device  5 [0x00] NVIDIA A10G
+#  Rank  6 Group  0 Pid  21170 on ip-10-0-33-54 device  6 [0x00] NVIDIA A10G
+#  Rank  7 Group  0 Pid  21173 on ip-10-0-33-54 device  7 [0x00] NVIDIA A10G
+#  Rank  8 Group  0 Pid  21213 on ip-10-0-45-41 device  0 [0x00] NVIDIA A10G
+#  Rank  9 Group  0 Pid  21214 on ip-10-0-45-41 device  1 [0x00] NVIDIA A10G
+#  Rank 10 Group  0 Pid  21215 on ip-10-0-45-41 device  2 [0x00] NVIDIA A10G
+#  Rank 11 Group  0 Pid  21216 on ip-10-0-45-41 device  3 [0x00] NVIDIA A10G
+#  Rank 12 Group  0 Pid  21217 on ip-10-0-45-41 device  4 [0x00] NVIDIA A10G
+#  Rank 13 Group  0 Pid  21218 on ip-10-0-45-41 device  5 [0x00] NVIDIA A10G
+#  Rank 14 Group  0 Pid  21220 on ip-10-0-45-41 device  6 [0x00] NVIDIA A10G
+#  Rank 15 Group  0 Pid  21222 on ip-10-0-45-41 device  7 [0x00] NVIDIA A10G
+ip-10-0-33-54:21163:21163 [0] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21163:21163 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21163:21163 [0] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21163:21163 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21163:21163 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21214:21214 [1] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21213:21213 [0] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21213:21213 [0] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21214:21214 [1] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21215:21215 [2] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21215:21215 [2] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21213:21213 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21213:21213 [0] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21213:21213 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21213:21213 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21214:21214 [1] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21214:21214 [1] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21214:21214 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21214:21214 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21215:21215 [2] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21215:21215 [2] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21215:21215 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21215:21215 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21163:21163 [0] NCCL INFO cudaDriverVersion 12020
+NCCL version 2.19.4+cuda12.3
+ip-10-0-33-54:21173:21173 [7] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21165:21165 [2] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21173:21173 [7] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21165:21165 [2] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21165:21165 [2] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21165:21165 [2] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21165:21165 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21165:21165 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21173:21173 [7] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21173:21173 [7] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21173:21173 [7] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21173:21173 [7] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21164:21164 [1] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21166:21166 [3] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21164:21164 [1] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21166:21166 [3] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21166:21166 [3] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21166:21166 [3] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21166:21166 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21166:21166 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21164:21164 [1] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21164:21164 [1] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21164:21164 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21164:21164 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21167:21167 [4] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21167:21167 [4] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21167:21167 [4] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21167:21167 [4] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21167:21167 [4] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21167:21167 [4] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21170:21170 [6] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21168:21168 [5] NCCL INFO cudaDriverVersion 12020
+ip-10-0-33-54:21168:21168 [5] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21170:21170 [6] NCCL INFO Bootstrap : Using ens5:10.0.33.54<0>
+ip-10-0-33-54:21168:21168 [5] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21168:21168 [5] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21168:21168 [5] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21168:21168 [5] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-33-54:21170:21170 [6] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-33-54:21170:21170 [6] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-33-54:21170:21170 [6] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-33-54:21170:21170 [6] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21216:21216 [3] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21216:21216 [3] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21217:21217 [4] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21216:21216 [3] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21216:21216 [3] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21216:21216 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21216:21216 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21217:21217 [4] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21220:21220 [6] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21220:21220 [6] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21222:21222 [7] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21217:21217 [4] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21217:21217 [4] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21217:21217 [4] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21217:21217 [4] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21218:21218 [5] NCCL INFO cudaDriverVersion 12020
+ip-10-0-45-41:21222:21222 [7] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21218:21218 [5] NCCL INFO Bootstrap : Using ens5:10.0.45.41<0>
+ip-10-0-45-41:21220:21220 [6] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21220:21220 [6] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21220:21220 [6] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21220:21220 [6] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21218:21218 [5] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21218:21218 [5] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21218:21218 [5] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21218:21218 [5] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21222:21222 [7] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v7 symbol.
+ip-10-0-45-41:21222:21222 [7] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+ip-10-0-45-41:21222:21222 [7] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v7 symbol.
+ip-10-0-45-41:21222:21222 [7] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21213:21286 [0] 143.139768 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21213:21286 [0] 143.184911 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21213:21286 [0] 143.194851 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21215:21288 [2] 144.280919 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21215:21288 [2] 144.326131 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21215:21288 [2] 144.336202 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21214:21287 [1] 145.628550 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21214:21287 [1] 145.652861 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21214:21287 [1] 145.656961 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21213:21286 [0] 157.074368 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21213:21286 [0] 157.104610 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21213:21286 [0] 157.107530 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21213:21286 [0] 157.110060 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21213:21286 [0] 157.121581 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21215:21288 [2] 161.818330 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21215:21288 [2] 161.849152 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21215:21288 [2] 161.852002 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21215:21288 [2] 161.854812 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21215:21288 [2] 161.857252 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21214:21287 [1] 162.368599 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21214:21287 [1] 162.401070 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21214:21287 [1] 162.403801 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21214:21287 [1] 162.406301 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21214:21287 [1] 162.418161 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21163:21236 [0] 714.792291 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21163:21236 [0] 714.839643 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21163:21236 [0] 714.849514 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21165:21237 [2] 145.843686 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21165:21237 [2] 145.891599 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21165:21237 [2] 145.902040 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21173:21238 [7] 147.694464 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21173:21238 [7] 147.731826 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21173:21238 [7] 147.741477 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21166:21239 [3] 147.174727 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21166:21239 [3] 147.197358 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21166:21239 [3] 147.201188 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21164:21240 [1] 150.368615 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21164:21240 [1] 150.414878 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21164:21240 [1] 150.424938 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21167:21241 [4] 153.105448 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21167:21241 [4] 153.139190 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21167:21241 [4] 153.143420 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21163:21236 [0] 732.783058 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21163:21236 [0] 732.814339 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21163:21236 [0] 732.826490 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21163:21236 [0] 732.836440 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21163:21236 [0] 732.847831 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21165:21237 [2] 166.147754 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21165:21237 [2] 166.180636 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21165:21237 [2] 166.183216 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21165:21237 [2] 166.194177 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21165:21237 [2] 166.203657 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21173:21238 [7] 170.012178 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21173:21238 [7] 170.039030 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21173:21238 [7] 170.042240 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21173:21238 [7] 170.052410 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21173:21238 [7] 170.054780 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21166:21239 [3] 168.072726 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21166:21239 [3] 168.102738 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21166:21239 [3] 168.113918 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21166:21239 [3] 168.123389 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21166:21239 [3] 168.133209 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21164:21240 [1] 172.848317 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21164:21240 [1] 172.879719 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21164:21240 [1] 172.882329 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21164:21240 [1] 172.893240 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21164:21240 [1] 172.902910 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21167:21241 [4] 173.724433 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21167:21241 [4] 173.752344 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21167:21241 [4] 173.763885 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21167:21241 [4] 173.773815 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21167:21241 [4] 173.783836 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21170:21243 [6] 138.912550 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21170:21243 [6] 138.959323 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21170:21243 [6] 138.971623 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21168:21242 [5] 138.914451 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-33-54:21168:21242 [5] 138.945073 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-33-54:21168:21242 [5] 138.949433 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21220:21292 [6] 148.712296 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21220:21292 [6] 148.752698 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21220:21292 [6] 148.762608 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21218:21293 [5] 149.012041 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21218:21293 [5] 149.050813 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21218:21293 [5] 149.060634 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21216:21290 [3] 152.709497 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21216:21290 [3] 152.757570 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21216:21290 [3] 152.767441 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21217:21291 [4] 152.196790 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21217:21291 [4] 152.235142 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21217:21291 [4] 152.245533 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.7.4-aws
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Using CUDA runtime version 12030
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Configuring AWS-specific options
+ip-10-0-45-41:21222:21294 [7] 151.731796 get_platform_type:123 NCCL TRACE NET/OFI EC2 platform type is g5.48xlarge
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Setting provider_filter to efa
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Setting FI_EFA_FORK_SAFE environment variable to 1
+ip-10-0-45-41:21222:21294 [7] 151.769538 configure_nvls_option:301 NCCL TRACE NET/OFI ncclGetVersion results = 21904
+ip-10-0-45-41:21222:21294 [7] 151.779519 configure_nvls_option:313 NCCL TRACE NET/OFI Not disabling NVLS support due to NCCL version 21904
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Running on g5.48xlarge platform, Setting NCCL_TOPO_FILE environment variable to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Internode latency set at 0.0 us
+ip-10-0-33-54:21170:21243 [6] 155.826001 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21170:21243 [6] 155.858923 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21170:21243 [6] 155.870994 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21170:21243 [6] 155.874554 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21170:21243 [6] 155.877904 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-33-54:21168:21242 [5] 155.963219 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-33-54:21168:21242 [5] 155.993341 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-33-54:21168:21242 [5] 155.997611 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-33-54:21168:21242 [5] 156.000081 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-33-54:21168:21242 [5] 156.010612 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21220:21292 [6] 167.331444 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21220:21292 [6] 167.367816 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21220:21292 [6] 167.370286 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21220:21292 [6] 167.372626 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21220:21292 [6] 167.375677 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21218:21293 [5] 167.551435 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21218:21293 [5] 167.582447 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21218:21293 [5] 167.594238 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21218:21293 [5] 167.603568 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21218:21293 [5] 167.613549 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21213:21286 [0] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21213:21286 [0] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21213:21286 [0] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21217:21291 [4] 173.867041 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21217:21291 [4] 173.900743 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21217:21291 [4] 173.912323 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21217:21291 [4] 173.921754 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21217:21291 [4] 173.931194 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21222:21294 [7] 175.640575 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21222:21294 [7] 175.676117 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21222:21294 [7] 175.678757 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21222:21294 [7] 175.681178 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21222:21294 [7] 175.683628 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21216:21290 [3] 178.187160 find_ofi_provider:567 NCCL TRACE NET/OFI Using Libfabric 1.18 API, with GPUDirect RDMA support
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Selected Provider is efa (found 1 nics)
+ip-10-0-45-41:21216:21290 [3] 178.215681 nccl_net_ofi_init:1074 NCCL TRACE NET/OFI Provider efa requires registration of local memory buffers
+ip-10-0-45-41:21216:21290 [3] 178.218301 nccl_net_ofi_init:1084 NCCL TRACE NET/OFI Provider efa uses remote virtual addressing
+ip-10-0-45-41:21216:21290 [3] 178.229862 check_own_mr_keys_required:905 NCCL TRACE NET/OFI Provider efa selects memory registration keys
+ip-10-0-45-41:21216:21290 [3] 178.240352 nccl_net_ofi_init:1105 NCCL TRACE NET/OFI Provider efa does not require endpoint memory registration
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Setting OFI_NCCL_PROTOCOL environment variable to RDMA
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Using transport protocol RDMA (user set)
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21214:21287 [1] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21214:21287 [1] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21214:21287 [1] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21215:21288 [2] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21215:21288 [2] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21215:21288 [2] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21218:21293 [5] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21218:21293 [5] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21218:21293 [5] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Using network Socket
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Using network Socket
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Using network Socket
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Using network Socket
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21216:21290 [3] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21216:21290 [3] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21216:21290 [3] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Using network Socket
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21217:21291 [4] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+
+ip-10-0-45-41:21217:21291 [4] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21217:21291 [4] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Using network Socket
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21163:21236 [0] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21163:21236 [0] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21163:21236 [0] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21222:21294 [7] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21222:21294 [7] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21222:21294 [7] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Using network Socket
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-45-41:21220:21292 [6] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-45-41:21220:21292 [6] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-45-41:21220:21292 [6] NCCL INFO net.cc:54 -> 2
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/IB : No device found.
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NET/Socket : Using [0]ens5:10.0.45.41<0>
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Using non-device net plugin version 0
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Using network Socket
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21165:21237 [2] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21165:21237 [2] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21165:21237 [2] NCCL INFO net.cc:54 -> 2
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21167:21241 [4] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21167:21241 [4] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21167:21241 [4] NCCL INFO net.cc:54 -> 2
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Using network Socket
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Using network Socket
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Using network Socket
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21164:21240 [1] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21173:21238 [7] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21173:21238 [7] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21173:21238 [7] NCCL INFO net.cc:54 -> 2
+
+ip-10-0-33-54:21164:21240 [1] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21164:21240 [1] NCCL INFO net.cc:54 -> 2
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Using network Socket
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Using network Socket
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21166:21239 [3] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21166:21239 [3] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21166:21239 [3] NCCL INFO net.cc:54 -> 2
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Using network Socket
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21168:21242 [5] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21168:21242 [5] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21168:21242 [5] NCCL INFO net.cc:54 -> 2
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Using network Socket
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI NIC group 0 device #0 0000:00:06.0
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/OFI Could not disable CUDA API usage for HMEM, disabling GDR
+
+ip-10-0-33-54:21170:21243 [6] validate_rdma_write:204 NCCL WARN NET/OFI FI_OPT_EFA_EMULATED_WRITE is true when the communication protocol is RDMA write.
+
+ip-10-0-33-54:21170:21243 [6] nccl_net_ofi_init:1239 NCCL WARN NET/OFI aws-ofi-nccl initialization failed
+ip-10-0-33-54:21170:21243 [6] NCCL INFO net.cc:54 -> 2
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/IB : No device found.
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NET/Socket : Using [0]ens5:10.0.33.54<0>
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Using non-device net plugin version 0
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Using network Socket
+ip-10-0-33-54:21166:21239 [3] NCCL INFO comm 0x22c6fa0 rank 3 nranks 16 cudaDev 3 nvmlDev 3 busId 190 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21163:21236 [0] NCCL INFO comm 0x2ee1c70 rank 0 nranks 16 cudaDev 0 nvmlDev 0 busId 160 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21167:21241 [4] NCCL INFO comm 0x18e9410 rank 4 nranks 16 cudaDev 4 nvmlDev 4 busId 1a0 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21164:21240 [1] NCCL INFO comm 0x1951670 rank 1 nranks 16 cudaDev 1 nvmlDev 1 busId 170 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21168:21242 [5] NCCL INFO comm 0x15df1c0 rank 5 nranks 16 cudaDev 5 nvmlDev 5 busId 1b0 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21173:21238 [7] NCCL INFO comm 0x201aad0 rank 7 nranks 16 cudaDev 7 nvmlDev 7 busId 1d0 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21165:21237 [2] NCCL INFO comm 0x11bc460 rank 2 nranks 16 cudaDev 2 nvmlDev 2 busId 180 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21170:21243 [6] NCCL INFO comm 0x213e210 rank 6 nranks 16 cudaDev 6 nvmlDev 6 busId 1c0 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21220:21292 [6] NCCL INFO comm 0x16d0f50 rank 14 nranks 16 cudaDev 6 nvmlDev 6 busId 1c0 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21222:21294 [7] NCCL INFO comm 0x2c907a0 rank 15 nranks 16 cudaDev 7 nvmlDev 7 busId 1d0 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21214:21287 [1] NCCL INFO comm 0x229ff30 rank 9 nranks 16 cudaDev 1 nvmlDev 1 busId 170 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21215:21288 [2] NCCL INFO comm 0x12ba020 rank 10 nranks 16 cudaDev 2 nvmlDev 2 busId 180 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21218:21293 [5] NCCL INFO comm 0x17ffde0 rank 13 nranks 16 cudaDev 5 nvmlDev 5 busId 1b0 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21217:21291 [4] NCCL INFO comm 0x2112890 rank 12 nranks 16 cudaDev 4 nvmlDev 4 busId 1a0 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21216:21290 [3] NCCL INFO comm 0x28407f0 rank 11 nranks 16 cudaDev 3 nvmlDev 3 busId 190 commId 0x895a670315fcb828 - Init START
+ip-10-0-45-41:21213:21286 [0] NCCL INFO comm 0x2ac6020 rank 8 nranks 16 cudaDev 0 nvmlDev 0 busId 160 commId 0x895a670315fcb828 - Init START
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NCCL_TOPO_FILE set by environment to /usr/local/share/aws-ofi-nccl/xml/g5.48xl-topo.xml
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Setting affinity for GPU 0 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-33-54:21163:21236 [0] NCCL INFO NVLS multicast support is not available on dev 0
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Setting affinity for GPU 5 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-33-54:21168:21242 [5] NCCL INFO NVLS multicast support is not available on dev 5
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Setting affinity for GPU 4 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-33-54:21167:21241 [4] NCCL INFO NVLS multicast support is not available on dev 4
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Setting affinity for GPU 2 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-33-54:21165:21237 [2] NCCL INFO NVLS multicast support is not available on dev 2
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Setting affinity for GPU 3 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-33-54:21166:21239 [3] NCCL INFO NVLS multicast support is not available on dev 3
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Setting affinity for GPU 6 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-45-41:21220:21292 [6] NCCL INFO NVLS multicast support is not available on dev 6
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Setting affinity for GPU 0 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-45-41:21213:21286 [0] NCCL INFO NVLS multicast support is not available on dev 0
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Setting affinity for GPU 7 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-45-41:21222:21294 [7] NCCL INFO NVLS multicast support is not available on dev 7
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Setting affinity for GPU 3 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21216:21290 [3] NCCL INFO NVLS multicast support is not available on dev 3
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Setting affinity for GPU 4 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-45-41:21217:21291 [4] NCCL INFO NVLS multicast support is not available on dev 4
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Setting affinity for GPU 6 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-33-54:21170:21243 [6] NCCL INFO NVLS multicast support is not available on dev 6
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Setting affinity for GPU 7 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-33-54:21173:21238 [7] NCCL INFO NVLS multicast support is not available on dev 7
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Setting affinity for GPU 1 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-33-54:21164:21240 [1] NCCL INFO NVLS multicast support is not available on dev 1
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Setting affinity for GPU 1 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-45-41:21214:21287 [1] NCCL INFO NVLS multicast support is not available on dev 1
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NCCL_IGNORE_DISABLED_P2P set by environment to 1.
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Setting affinity for GPU 5 to ffffffff,ffff0000,00000000,ffffffff,ffff0000,00000000
+ip-10-0-45-41:21218:21293 [5] NCCL INFO NVLS multicast support is not available on dev 5
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Setting affinity for GPU 2 to ffff,ffffffff,00000000,0000ffff,ffffffff
+ip-10-0-45-41:21215:21288 [2] NCCL INFO NVLS multicast support is not available on dev 2
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Trees [0] -1/-1/-1->7->6 [1] -1/-1/-1->7->6
+ip-10-0-33-54:21173:21238 [7] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Trees [0] 6/-1/-1->5->4 [1] 6/-1/-1->5->4
+ip-10-0-33-54:21168:21242 [5] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Trees [0] 7/-1/-1->6->5 [1] 7/-1/-1->6->5
+ip-10-0-33-54:21170:21243 [6] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0
+ip-10-0-33-54:21164:21240 [1] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Trees [0] 5/-1/-1->4->3 [1] 5/-1/-1->4->3
+ip-10-0-33-54:21167:21241 [4] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Trees [0] 4/-1/-1->3->2 [1] 4/-1/-1->3->2
+ip-10-0-33-54:21166:21239 [3] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21165:21237 [2] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 00/02 :    0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 01/02 :    0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Trees [0] 1/8/-1->0->-1 [1] 1/-1/-1->0->8
+ip-10-0-33-54:21163:21236 [0] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Trees [0] 13/-1/-1->12->11 [1] 13/-1/-1->12->11
+ip-10-0-45-41:21217:21291 [4] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Trees [0] 15/-1/-1->14->13 [1] 15/-1/-1->14->13
+ip-10-0-45-41:21220:21292 [6] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Trees [0] 10/-1/-1->9->8 [1] 10/-1/-1->9->8
+ip-10-0-45-41:21214:21287 [1] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Trees [0] -1/-1/-1->15->14 [1] -1/-1/-1->15->14
+ip-10-0-45-41:21222:21294 [7] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Trees [0] 11/-1/-1->10->9 [1] 11/-1/-1->10->9
+ip-10-0-45-41:21215:21288 [2] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Trees [0] 14/-1/-1->13->12 [1] 14/-1/-1->13->12
+ip-10-0-45-41:21218:21293 [5] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Trees [0] 12/-1/-1->11->10 [1] 12/-1/-1->11->10
+ip-10-0-45-41:21216:21290 [3] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Trees [0] 9/-1/-1->8->0 [1] 9/0/-1->8->-1
+ip-10-0-45-41:21213:21286 [0] NCCL INFO P2P Chunksize set to 131072
+ip-10-0-33-54:21163:21252 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 00/0 : 15[7] -> 0[0] [receive] via NET/Socket/0
+ip-10-0-45-41:21213:21304 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 00/0 : 7[7] -> 8[0] [receive] via NET/Socket/0
+ip-10-0-33-54:21163:21252 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 01/0 : 15[7] -> 0[0] [receive] via NET/Socket/0
+ip-10-0-45-41:21213:21304 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 01/0 : 7[7] -> 8[0] [receive] via NET/Socket/0
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 00 : 8[0] -> 9[1] via SHM/direct/direct
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 01 : 8[0] -> 9[1] via SHM/direct/direct
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Channel 00 : 10[2] -> 11[3] via SHM/direct/direct
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Channel 00 : 9[1] -> 10[2] via SHM/direct/direct
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Channel 01 : 10[2] -> 11[3] via SHM/direct/direct
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Channel 00 : 14[6] -> 15[7] via SHM/direct/direct
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Channel 00 : 13[5] -> 14[6] via SHM/direct/direct
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Channel 01 : 9[1] -> 10[2] via SHM/direct/direct
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Channel 00 : 4[4] -> 5[5] via SHM/direct/direct
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Channel 00 : 12[4] -> 13[5] via SHM/direct/direct
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Channel 00 : 1[1] -> 2[2] via SHM/direct/direct
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Channel 00 : 11[3] -> 12[4] via SHM/direct/direct
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Channel 01 : 14[6] -> 15[7] via SHM/direct/direct
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Channel 01 : 4[4] -> 5[5] via SHM/direct/direct
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Channel 01 : 13[5] -> 14[6] via SHM/direct/direct
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Channel 00 : 3[3] -> 4[4] via SHM/direct/direct
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Channel 01 : 1[1] -> 2[2] via SHM/direct/direct
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Channel 01 : 12[4] -> 13[5] via SHM/direct/direct
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Channel 01 : 11[3] -> 12[4] via SHM/direct/direct
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Channel 00 : 6[6] -> 7[7] via SHM/direct/direct
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Channel 00 : 2[2] -> 3[3] via SHM/direct/direct
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Channel 00 : 5[5] -> 6[6] via SHM/direct/direct
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Channel 00/0 : 7[7] -> 8[0] [send] via NET/Socket/0
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Channel 01/0 : 7[7] -> 8[0] [send] via NET/Socket/0
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Channel 01 : 3[3] -> 4[4] via SHM/direct/direct
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Channel 01 : 6[6] -> 7[7] via SHM/direct/direct
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Channel 01 : 2[2] -> 3[3] via SHM/direct/direct
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Channel 01 : 5[5] -> 6[6] via SHM/direct/direct
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Channel 00/0 : 15[7] -> 0[0] [send] via NET/Socket/0
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Channel 01/0 : 15[7] -> 0[0] [send] via NET/Socket/0
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Connected all rings
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Connected all rings
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Connected all rings
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Connected all rings
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Connected all rings
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Connected all rings
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Connected all rings
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Connected all rings
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Channel 00 : 3[3] -> 2[2] via SHM/direct/direct
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Channel 01 : 3[3] -> 2[2] via SHM/direct/direct
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Channel 00 : 10[2] -> 9[1] via SHM/direct/direct
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Channel 00 : 13[5] -> 12[4] via SHM/direct/direct
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Channel 00 : 4[4] -> 3[3] via SHM/direct/direct
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Channel 01 : 10[2] -> 9[1] via SHM/direct/direct
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Channel 00 : 5[5] -> 4[4] via SHM/direct/direct
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Channel 01 : 13[5] -> 12[4] via SHM/direct/direct
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Channel 00 : 2[2] -> 1[1] via SHM/direct/direct
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Channel 01 : 4[4] -> 3[3] via SHM/direct/direct
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Channel 00 : 11[3] -> 10[2] via SHM/direct/direct
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Channel 01 : 5[5] -> 4[4] via SHM/direct/direct
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Channel 00 : 12[4] -> 11[3] via SHM/direct/direct
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Channel 01 : 2[2] -> 1[1] via SHM/direct/direct
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Channel 01 : 11[3] -> 10[2] via SHM/direct/direct
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Channel 01 : 12[4] -> 11[3] via SHM/direct/direct
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Connected all rings
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Connected all rings
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Connected all rings
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Connected all rings
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Channel 00 : 7[7] -> 6[6] via SHM/direct/direct
+ip-10-0-45-41:21213:21304 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 00/0 : 0[0] -> 8[0] [receive] via NET/Socket/0
+ip-10-0-45-41:21213:21304 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 01/0 : 0[0] -> 8[0] [receive] via NET/Socket/0
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Channel 01 : 7[7] -> 6[6] via SHM/direct/direct
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 00/0 : 8[0] -> 0[0] [send] via NET/Socket/0
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Channel 01/0 : 8[0] -> 0[0] [send] via NET/Socket/0
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Connected all rings
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Connected all rings
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Connected all rings
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Connected all rings
+ip-10-0-33-54:21163:21252 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 00/0 : 8[0] -> 0[0] [receive] via NET/Socket/0
+ip-10-0-33-54:21163:21252 [0] NCCL INFO NET/Socket: Using 2 threads and 8 sockets per thread
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 01/0 : 8[0] -> 0[0] [receive] via NET/Socket/0
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 00/0 : 0[0] -> 8[0] [send] via NET/Socket/0
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Channel 00 : 15[7] -> 14[6] via SHM/direct/direct
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Channel 01/0 : 0[0] -> 8[0] [send] via NET/Socket/0
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Channel 01 : 15[7] -> 14[6] via SHM/direct/direct
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Channel 00 : 6[6] -> 5[5] via SHM/direct/direct
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Channel 00 : 9[1] -> 8[0] via SHM/direct/direct
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Channel 01 : 6[6] -> 5[5] via SHM/direct/direct
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Channel 01 : 9[1] -> 8[0] via SHM/direct/direct
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Channel 00 : 14[6] -> 13[5] via SHM/direct/direct
+ip-10-0-45-41:21216:21290 [3] NCCL INFO Connected all trees
+ip-10-0-45-41:21216:21290 [3] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21216:21290 [3] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Channel 01 : 14[6] -> 13[5] via SHM/direct/direct
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Channel 00 : 1[1] -> 0[0] via SHM/direct/direct
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Channel 01 : 1[1] -> 0[0] via SHM/direct/direct
+ip-10-0-33-54:21173:21238 [7] NCCL INFO Connected all trees
+ip-10-0-33-54:21173:21238 [7] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21173:21238 [7] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21167:21241 [4] NCCL INFO Connected all trees
+ip-10-0-33-54:21167:21241 [4] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21167:21241 [4] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21170:21243 [6] NCCL INFO Connected all trees
+ip-10-0-33-54:21168:21242 [5] NCCL INFO Connected all trees
+ip-10-0-33-54:21170:21243 [6] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21170:21243 [6] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21168:21242 [5] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21168:21242 [5] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21215:21288 [2] NCCL INFO Connected all trees
+ip-10-0-45-41:21215:21288 [2] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21215:21288 [2] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21217:21291 [4] NCCL INFO Connected all trees
+ip-10-0-45-41:21217:21291 [4] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21217:21291 [4] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21222:21294 [7] NCCL INFO Connected all trees
+ip-10-0-45-41:21222:21294 [7] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21222:21294 [7] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21220:21292 [6] NCCL INFO Connected all trees
+ip-10-0-45-41:21220:21292 [6] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21220:21292 [6] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21218:21293 [5] NCCL INFO Connected all trees
+ip-10-0-45-41:21218:21293 [5] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21218:21293 [5] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21166:21239 [3] NCCL INFO Connected all trees
+ip-10-0-33-54:21166:21239 [3] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21166:21239 [3] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21165:21237 [2] NCCL INFO Connected all trees
+ip-10-0-33-54:21165:21237 [2] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21165:21237 [2] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21164:21240 [1] NCCL INFO Connected all trees
+ip-10-0-33-54:21163:21236 [0] NCCL INFO Connected all trees
+ip-10-0-33-54:21164:21240 [1] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21164:21240 [1] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21163:21236 [0] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-33-54:21163:21236 [0] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21213:21286 [0] NCCL INFO Connected all trees
+ip-10-0-45-41:21213:21286 [0] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21213:21286 [0] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-45-41:21214:21287 [1] NCCL INFO Connected all trees
+ip-10-0-45-41:21214:21287 [1] NCCL INFO threadThresholds 8/8/64 | 128/8/64 | 512 | 512
+ip-10-0-45-41:21214:21287 [1] NCCL INFO 2 coll channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ip-10-0-33-54:21170:21243 [6] NCCL INFO comm 0x213e210 rank 6 nranks 16 cudaDev 6 nvmlDev 6 busId 1c0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21166:21239 [3] NCCL INFO comm 0x22c6fa0 rank 3 nranks 16 cudaDev 3 nvmlDev 3 busId 190 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21163:21236 [0] NCCL INFO comm 0x2ee1c70 rank 0 nranks 16 cudaDev 0 nvmlDev 0 busId 160 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21165:21237 [2] NCCL INFO comm 0x11bc460 rank 2 nranks 16 cudaDev 2 nvmlDev 2 busId 180 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21164:21240 [1] NCCL INFO comm 0x1951670 rank 1 nranks 16 cudaDev 1 nvmlDev 1 busId 170 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21167:21241 [4] NCCL INFO comm 0x18e9410 rank 4 nranks 16 cudaDev 4 nvmlDev 4 busId 1a0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21173:21238 [7] NCCL INFO comm 0x201aad0 rank 7 nranks 16 cudaDev 7 nvmlDev 7 busId 1d0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-33-54:21168:21242 [5] NCCL INFO comm 0x15df1c0 rank 5 nranks 16 cudaDev 5 nvmlDev 5 busId 1b0 commId 0x895a670315fcb828 - Init COMPLETE
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+ip-10-0-45-41:21220:21292 [6] NCCL INFO comm 0x16d0f50 rank 14 nranks 16 cudaDev 6 nvmlDev 6 busId 1c0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21218:21293 [5] NCCL INFO comm 0x17ffde0 rank 13 nranks 16 cudaDev 5 nvmlDev 5 busId 1b0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21214:21287 [1] NCCL INFO comm 0x229ff30 rank 9 nranks 16 cudaDev 1 nvmlDev 1 busId 170 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21213:21286 [0] NCCL INFO comm 0x2ac6020 rank 8 nranks 16 cudaDev 0 nvmlDev 0 busId 160 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21217:21291 [4] NCCL INFO comm 0x2112890 rank 12 nranks 16 cudaDev 4 nvmlDev 4 busId 1a0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21222:21294 [7] NCCL INFO comm 0x2c907a0 rank 15 nranks 16 cudaDev 7 nvmlDev 7 busId 1d0 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21216:21290 [3] NCCL INFO comm 0x28407f0 rank 11 nranks 16 cudaDev 3 nvmlDev 3 busId 190 commId 0x895a670315fcb828 - Init COMPLETE
+ip-10-0-45-41:21215:21288 [2] NCCL INFO comm 0x12ba020 rank 10 nranks 16 cudaDev 2 nvmlDev 2 busId 180 commId 0x895a670315fcb828 - Init COMPLETE
+           8             2     float     sum      -1    162.8    0.00    0.00      0    166.1    0.00    0.00      0
+          16             4     float     sum      -1    171.1    0.00    0.00      0    152.2    0.00    0.00      0
+          32             8     float     sum      -1    142.3    0.00    0.00      0    143.5    0.00    0.00      0
+          64            16     float     sum      -1    150.9    0.00    0.00      0    151.8    0.00    0.00      0
+         128            32     float     sum      -1    150.1    0.00    0.00      0    154.8    0.00    0.00      0
+         256            64     float     sum      -1    159.6    0.00    0.00      0    156.1    0.00    0.00      0
+         512           128     float     sum      -1    162.7    0.00    0.01      0    161.9    0.00    0.01      0
+        1024           256     float     sum      -1    157.3    0.01    0.01      0    153.5    0.01    0.01      0
+        2048           512     float     sum      -1    169.3    0.01    0.02      0    157.9    0.01    0.02      0
+        4096          1024     float     sum      -1    186.3    0.02    0.04      0    186.2    0.02    0.04      0
+        8192          2048     float     sum      -1    284.0    0.03    0.05      0    279.0    0.03    0.06      0
+       16384          4096     float     sum      -1    282.5    0.06    0.11      0    289.6    0.06    0.11      0
+       32768          8192     float     sum      -1    410.4    0.08    0.15      0    413.8    0.08    0.15      0
+       65536         16384     float     sum      -1    470.6    0.14    0.26      0    467.1    0.14    0.26      0
+      131072         32768     float     sum      -1   1085.1    0.12    0.23      0   1000.5    0.13    0.25      0
+      262144         65536     float     sum      -1    986.6    0.27    0.50      0   1056.5    0.25    0.47      0
+      524288        131072     float     sum      -1   1067.0    0.49    0.92      0   1194.7    0.44    0.82      0
+     1048576        262144     float     sum      -1   1632.6    0.64    1.20      0   4331.3    0.24    0.45      0
+     2097152        524288     float     sum      -1   1622.2    1.29    2.42      0   1545.0    1.36    2.55      0
+     4194304       1048576     float     sum      -1   5229.0    0.80    1.50      0    12047    0.35    0.65      0
+     8388608       2097152     float     sum      -1   7883.5    1.06    2.00      0   9818.9    0.85    1.60      0
+    16777216       4194304     float     sum      -1    15631    1.07    2.01      0    15829    1.06    1.99      0
+    33554432       8388608     float     sum      -1    34636    0.97    1.82      0    36694    0.91    1.71      0
+    67108864      16777216     float     sum      -1    68099    0.99    1.85      0    72712    0.92    1.73      0
+   134217728      33554432     float     sum      -1   133623    1.00    1.88      0   133562    1.00    1.88      0
+   268435456      67108864     float     sum      -1   272225    0.99    1.85      0   283291    0.95    1.78      0
