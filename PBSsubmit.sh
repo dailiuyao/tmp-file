@@ -11,13 +11,21 @@
 #PBS -e megatron.error
 
 #---- USER CONFIG PARAMS----
-export MPI_HOME=/opt/cray/pe/mpich/8.1.16/ofi/gnu/9.1
+#export MPI_HOME=/opt/cray/pe/mpich/8.1.16/ofi/gnu/9.1
+export MPI_HOME=/opt/cray/pe/mpich/8.1.25/ofi/gnu/9.1
 # MPI_RUN=/opt/pbs/bin/mpiexec
 #-------------------------
-#module purge
-module load nvhpc/23.1
+# #module purge
+# module load nvhpc/23.1
+# ml cudatoolkit-standalone/11.8.0
+# ml gcc
+
+module reset
+module swap PrgEnv-nvhpc PrgEnv-gnu
+#ml nvhpc-mixed/22.11
+ml gcc/10.3.0
 ml cudatoolkit-standalone/11.8.0
-ml gcc
+
 
 echo "Current(master) node:$(hostname)"
 cat $PBS_NODEFILE

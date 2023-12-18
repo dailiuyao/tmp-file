@@ -4,9 +4,16 @@
 source /home/yuke/lyd/conda.sh
 conda activate pytorchNCCL-hao
 
-module purge
+# module purge
+# ml cudatoolkit-standalone/11.8.0
+# ml gcc
+
+
+module swap PrgEnv-nvhpc PrgEnv-gnu
+#ml nvhpc-mixed/22.11
+ml gcc/10.3.0
 ml cudatoolkit-standalone/11.8.0
-ml gcc
+
 
 # export $PROTOCOL=RDMA/tcpip/ipoib
 export PROTOCOL=RDMA
@@ -116,7 +123,7 @@ fi
 # if [ "$PROTOCOL" = "RDMA" ]; then
 export MASTER_ADDR=$4
 export NCCL_SOCKET_IFNAME=hsn0
-export NCCL_NET=IB
+export NCCL_NET=Socket
 # elif [ "$PROTOCOL" = "ipoib" ]; then
 #     export MASTER_ADDR="10.3.1.153"
 #   export NCCL_SOCKET_IFNAME=ib0
@@ -192,6 +199,13 @@ RTOP1_PID=$!
 
 sh /home/yuke/lyd/megatron_run_scripts/rtop.sh -d hsn1 > /home/yuke/lyd/tmp-file/logs/hsn1-${MODEL}-worldsize${WORLD_SIZE}-mbs${MICRO_BATCH_SIZE_GPT2_L}-noderank${NODE_RANK}-gbs${GLOBAL_BATCH_SIZE_GPT2_L}-DP${DP}-TP${TP}-PP${PP}.csv &
 RTOP2_PID=$!
+
+
+
+echo $OMP_NUM_THREADS
+export OMP_NUM_THREADS=1
+echo $OMP_NUM_THREADS
+export LD_LIBRARY_PATH=/home/yuke/lyd/conda3/envs/pytorchNCCL-hao/lib/:$LD_LIBRARY_PATH
 
 if [ "$MODEL" = "gpt2" ]; then
     /home/yuke/lyd/conda3/envs/pytorchNCCL-hao/bin/python -m torch.distributed.launch $DISTRIBUTED_ARGS /home/yuke/lyd/Megatron-LM/pretrain_gpt.py \

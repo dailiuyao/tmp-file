@@ -45,9 +45,18 @@ devname="null"
 interval=1
 protocol="all"
 
+# define networking commands
+netprobip="/bin/ip -f inet address show"
+netprobif="/usr/sbin/ifconfig"
+
 check_dev_validity() {
    dev=$1
-   /usr/sbin/ifconfig $dev &> /dev/null
+   if [ -d '${netprobif}' ]
+   then
+     ${netprobif} $dev &> /dev/null
+   else 
+     ${netprobip} $dev &> /dev/null
+   fi
    if [ $? != 0 ]
    then
       echo "Device $dev is invalid. Please double check the parameter."
@@ -127,7 +136,8 @@ max_number(){
 }
 
 do_sampling_cal() {
-	all_counters=`ethtool -S ${devname}`
+	echo ${devname}
+	all_counters=`/usr/sbin/ethtool -S ${devname}`
         rdma_counters=`echo "${all_counters}" | grep "rdma" | grep "unicast"`
 
 	#echo ${rdma_counters}
@@ -147,7 +157,7 @@ do_sampling_cal() {
 
 	sleep ${interval}
 
-	all_counters=`ethtool -S ${devname}`
+	all_counters=`/usr/sbin/ethtool -S ${devname}`
         rdma_counters=`echo "${all_counters}" | grep "rdma" | grep "unicast"`
 
 	#echo ${rdma_counters}
