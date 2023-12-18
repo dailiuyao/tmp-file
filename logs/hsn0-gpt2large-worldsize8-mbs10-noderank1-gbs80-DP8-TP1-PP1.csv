@@ -1,0 +1,327 @@
+06:42:15             IFACE               Protocol            rxpck/s             txpck/s             rxkB/s              txkB/s
+hsn0
+06:42:17             hsn0                rdma                0                   0                   0                   0
+06:42:17             hsn0                ipoib               0                   0                   0                   0
+06:42:17             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:18             hsn0                rdma                0                   0                   0                   0
+06:42:18             hsn0                ipoib               0                   0                   0                   0
+06:42:18             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:20             hsn0                rdma                0                   0                   0                   0
+06:42:20             hsn0                ipoib               0                   0                   0                   0
+06:42:20             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:21             hsn0                rdma                0                   0                   0                   0
+06:42:21             hsn0                ipoib               0                   0                   0                   0
+06:42:21             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:23             hsn0                rdma                0                   0                   0                   0
+06:42:23             hsn0                ipoib               0                   0                   0                   0
+06:42:23             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:24             hsn0                rdma                0                   0                   0                   0
+06:42:24             hsn0                ipoib               0                   0                   0                   0
+06:42:24             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:26             hsn0                rdma                0                   0                   0                   0
+06:42:26             hsn0                ipoib               0                   0                   0                   0
+06:42:26             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:29             hsn0                rdma                0                   0                   0                   0
+06:42:29             hsn0                ipoib               0                   0                   0                   0
+06:42:29             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:32             hsn0                rdma                0                   0                   0                   0
+06:42:32             hsn0                ipoib               0                   0                   0                   0
+06:42:32             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:35             hsn0                rdma                0                   0                   0                   0
+06:42:35             hsn0                ipoib               0                   0                   0                   0
+06:42:35             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:37             hsn0                rdma                0                   0                   0                   0
+06:42:37             hsn0                ipoib               0                   0                   0                   0
+06:42:37             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:40             hsn0                rdma                0                   0                   0                   0
+06:42:40             hsn0                ipoib               0                   0                   0                   0
+06:42:41             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:45             hsn0                rdma                0                   0                   0                   0
+06:42:46             hsn0                ipoib               0                   0                   0                   0
+06:42:46             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:50             hsn0                rdma                0                   0                   0                   0
+06:42:50             hsn0                ipoib               0                   0                   0                   0
+06:42:50             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:53             hsn0                rdma                0                   0                   0                   0
+06:42:53             hsn0                ipoib               0                   0                   0                   0
+06:42:53             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:54             hsn0                rdma                0                   0                   0                   0
+06:42:54             hsn0                ipoib               0                   0                   0                   0
+06:42:54             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:56             hsn0                rdma                0                   0                   0                   0
+06:42:56             hsn0                ipoib               0                   0                   0                   0
+06:42:56             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:42:58             hsn0                rdma                0                   0                   0                   0
+06:42:58             hsn0                ipoib               0                   0                   0                   0
+06:42:58             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:01             hsn0                rdma                0                   0                   0                   0
+06:43:01             hsn0                ipoib               0                   0                   0                   0
+06:43:01             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:07             hsn0                rdma                0                   0                   0                   0
+06:43:07             hsn0                ipoib               0                   0                   0                   0
+06:43:07             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:18             hsn0                rdma                0                   0                   0                   0
+06:43:18             hsn0                ipoib               0                   0                   0                   0
+06:43:18             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:21             hsn0                rdma                0                   0                   0                   0
+06:43:21             hsn0                ipoib               0                   0                   0                   0
+06:43:21             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:24             hsn0                rdma                0                   0                   0                   0
+06:43:24             hsn0                ipoib               0                   0                   0                   0
+06:43:24             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:26             hsn0                rdma                0                   0                   0                   0
+06:43:26             hsn0                ipoib               0                   0                   0                   0
+06:43:26             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:27             hsn0                rdma                0                   0                   0                   0
+06:43:28             hsn0                ipoib               0                   0                   0                   0
+06:43:28             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:29             hsn0                rdma                0                   0                   0                   0
+06:43:29             hsn0                ipoib               0                   0                   0                   0
+06:43:29             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:32             hsn0                rdma                0                   0                   0                   0
+06:43:32             hsn0                ipoib               0                   0                   0                   0
+06:43:32             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:33             hsn0                rdma                0                   0                   0                   0
+06:43:33             hsn0                ipoib               0                   0                   0                   0
+06:43:33             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:35             hsn0                rdma                0                   0                   0                   0
+06:43:35             hsn0                ipoib               0                   0                   0                   0
+06:43:35             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:36             hsn0                rdma                0                   0                   0                   0
+06:43:36             hsn0                ipoib               0                   0                   0                   0
+06:43:36             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:38             hsn0                rdma                0                   0                   0                   0
+06:43:38             hsn0                ipoib               0                   0                   0                   0
+06:43:38             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:40             hsn0                rdma                0                   0                   0                   0
+06:43:40             hsn0                ipoib               0                   0                   0                   0
+06:43:40             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:42             hsn0                rdma                0                   0                   0                   0
+06:43:42             hsn0                ipoib               0                   0                   0                   0
+06:43:42             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:43             hsn0                rdma                0                   0                   0                   0
+06:43:43             hsn0                ipoib               0                   0                   0                   0
+06:43:43             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:45             hsn0                rdma                0                   0                   0                   0
+06:43:45             hsn0                ipoib               0                   0                   0                   0
+06:43:45             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:47             hsn0                rdma                0                   0                   0                   0
+06:43:47             hsn0                ipoib               0                   0                   0                   0
+06:43:47             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:48             hsn0                rdma                0                   0                   0                   0
+06:43:48             hsn0                ipoib               0                   0                   0                   0
+06:43:48             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:50             hsn0                rdma                0                   0                   0                   0
+06:43:50             hsn0                ipoib               0                   0                   0                   0
+06:43:50             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:52             hsn0                rdma                0                   0                   0                   0
+06:43:52             hsn0                ipoib               0                   0                   0                   0
+06:43:52             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:54             hsn0                rdma                0                   0                   0                   0
+06:43:54             hsn0                ipoib               0                   0                   0                   0
+06:43:54             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:55             hsn0                rdma                0                   0                   0                   0
+06:43:55             hsn0                ipoib               0                   0                   0                   0
+06:43:55             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:57             hsn0                rdma                0                   0                   0                   0
+06:43:57             hsn0                ipoib               0                   0                   0                   0
+06:43:57             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:43:59             hsn0                rdma                0                   0                   0                   0
+06:43:59             hsn0                ipoib               0                   0                   0                   0
+06:43:59             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:01             hsn0                rdma                0                   0                   0                   0
+06:44:01             hsn0                ipoib               0                   0                   0                   0
+06:44:01             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:02             hsn0                rdma                0                   0                   0                   0
+06:44:02             hsn0                ipoib               0                   0                   0                   0
+06:44:02             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:04             hsn0                rdma                0                   0                   0                   0
+06:44:04             hsn0                ipoib               0                   0                   0                   0
+06:44:04             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:06             hsn0                rdma                0                   0                   0                   0
+06:44:06             hsn0                ipoib               0                   0                   0                   0
+06:44:06             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:07             hsn0                rdma                0                   0                   0                   0
+06:44:07             hsn0                ipoib               0                   0                   0                   0
+06:44:07             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:09             hsn0                rdma                0                   0                   0                   0
+06:44:09             hsn0                ipoib               0                   0                   0                   0
+06:44:09             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:11             hsn0                rdma                0                   0                   0                   0
+06:44:11             hsn0                ipoib               0                   0                   0                   0
+06:44:11             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:13             hsn0                rdma                0                   0                   0                   0
+06:44:13             hsn0                ipoib               0                   0                   0                   0
+06:44:13             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:14             hsn0                rdma                0                   0                   0                   0
+06:44:14             hsn0                ipoib               0                   0                   0                   0
+06:44:14             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:16             hsn0                rdma                0                   0                   0                   0
+06:44:16             hsn0                ipoib               0                   0                   0                   0
+06:44:16             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:18             hsn0                rdma                0                   0                   0                   0
+06:44:18             hsn0                ipoib               0                   0                   0                   0
+06:44:18             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:20             hsn0                rdma                0                   0                   0                   0
+06:44:20             hsn0                ipoib               0                   0                   0                   0
+06:44:20             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:22             hsn0                rdma                0                   0                   0                   0
+06:44:22             hsn0                ipoib               0                   0                   0                   0
+06:44:22             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:23             hsn0                rdma                0                   0                   0                   0
+06:44:23             hsn0                ipoib               0                   0                   0                   0
+06:44:23             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:25             hsn0                rdma                0                   0                   0                   0
+06:44:25             hsn0                ipoib               0                   0                   0                   0
+06:44:25             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:27             hsn0                rdma                0                   0                   0                   0
+06:44:27             hsn0                ipoib               0                   0                   0                   0
+06:44:27             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:28             hsn0                rdma                0                   0                   0                   0
+06:44:28             hsn0                ipoib               0                   0                   0                   0
+06:44:28             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:30             hsn0                rdma                0                   0                   0                   0
+06:44:30             hsn0                ipoib               0                   0                   0                   0
+06:44:30             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:32             hsn0                rdma                0                   0                   0                   0
+06:44:32             hsn0                ipoib               0                   0                   0                   0
+06:44:32             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:35             hsn0                rdma                0                   0                   0                   0
+06:44:35             hsn0                ipoib               0                   0                   0                   0
+06:44:35             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:36             hsn0                rdma                0                   0                   0                   0
+06:44:36             hsn0                ipoib               0                   0                   0                   0
+06:44:36             hsn0                all                 0                   0                   0                   0 
+
+hsn0
+06:44:38             hsn0                rdma                0                   0                   0                   0
+06:44:38             hsn0                ipoib               0                   0                   0                   0
+06:44:38             hsn0                all                 0                   0                   0                   0 
+
+hsn0
