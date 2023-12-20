@@ -1,0 +1,352 @@
+17:41:26             IFACE               Protocol            rxpck/s             txpck/s             rxkB/s              txkB/s
+ib0
+17:41:27             ib0                 rdma                0                   0                   0                   0
+17:41:27             ib0                 ipoib               0                   0                   0                   0
+17:41:27             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:28             ib0                 rdma                0                   0                   0                   0
+17:41:28             ib0                 ipoib               0                   0                   0                   0
+17:41:28             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:30             ib0                 rdma                0                   0                   0                   0
+17:41:30             ib0                 ipoib               0                   0                   0                   0
+17:41:30             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:31             ib0                 rdma                0                   0                   0                   0
+17:41:31             ib0                 ipoib               0                   0                   0                   0
+17:41:31             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:32             ib0                 rdma                0                   0                   0                   0
+17:41:32             ib0                 ipoib               0                   0                   0                   0
+17:41:32             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:33             ib0                 rdma                0                   0                   0                   0
+17:41:33             ib0                 ipoib               0                   0                   0                   0
+17:41:33             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:34             ib0                 rdma                0                   0                   0                   0
+17:41:34             ib0                 ipoib               0                   0                   0                   0
+17:41:34             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:35             ib0                 rdma                0                   0                   0                   0
+17:41:35             ib0                 ipoib               0                   0                   0                   0
+17:41:35             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:36             ib0                 rdma                0                   0                   0                   0
+17:41:36             ib0                 ipoib               0                   0                   0                   0
+17:41:36             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:37             ib0                 rdma                0                   0                   0                   0
+17:41:37             ib0                 ipoib               0                   0                   0                   0
+17:41:37             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:39             ib0                 rdma                0                   0                   0                   0
+17:41:39             ib0                 ipoib               0                   0                   0                   0
+17:41:39             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:40             ib0                 rdma                0                   0                   0                   0
+17:41:40             ib0                 ipoib               0                   0                   0                   0
+17:41:40             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:41             ib0                 rdma                0                   0                   0                   0
+17:41:41             ib0                 ipoib               0                   0                   0                   0
+17:41:41             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:42             ib0                 rdma                0                   0                   0                   0
+17:41:42             ib0                 ipoib               0                   0                   0                   0
+17:41:42             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:43             ib0                 rdma                0                   0                   0                   0
+17:41:43             ib0                 ipoib               0                   0                   0                   0
+17:41:43             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:44             ib0                 rdma                0                   0                   0                   0
+17:41:44             ib0                 ipoib               0                   0                   0                   0
+17:41:44             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:45             ib0                 rdma                0                   0                   0                   0
+17:41:45             ib0                 ipoib               0                   0                   0                   0
+17:41:45             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:47             ib0                 rdma                0                   0                   0                   0
+17:41:47             ib0                 ipoib               0                   0                   0                   0
+17:41:47             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:48             ib0                 rdma                0                   0                   0                   0
+17:41:48             ib0                 ipoib               0                   0                   0                   0
+17:41:48             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:49             ib0                 rdma                0                   0                   0                   0
+17:41:49             ib0                 ipoib               0                   0                   0                   0
+17:41:49             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:50             ib0                 rdma                0                   0                   0                   0
+17:41:50             ib0                 ipoib               0                   0                   0                   0
+17:41:50             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:51             ib0                 rdma                0                   0                   0                   0
+17:41:51             ib0                 ipoib               0                   0                   0                   0
+17:41:51             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:52             ib0                 rdma                0                   0                   0                   0
+17:41:52             ib0                 ipoib               0                   0                   0                   0
+17:41:52             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:53             ib0                 rdma                0                   0                   0                   0
+17:41:53             ib0                 ipoib               0                   0                   0                   0
+17:41:53             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:54             ib0                 rdma                0                   0                   0                   0
+17:41:54             ib0                 ipoib               0                   0                   0                   0
+17:41:54             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:56             ib0                 rdma                0                   0                   0                   0
+17:41:56             ib0                 ipoib               0                   0                   0                   0
+17:41:56             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:57             ib0                 rdma                0                   0                   0                   0
+17:41:57             ib0                 ipoib               0                   0                   0                   0
+17:41:57             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:58             ib0                 rdma                0                   0                   0                   0
+17:41:58             ib0                 ipoib               0                   0                   0                   0
+17:41:58             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:41:59             ib0                 rdma                0                   0                   0                   0
+17:41:59             ib0                 ipoib               0                   0                   0                   0
+17:41:59             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:00             ib0                 rdma                0                   0                   0                   0
+17:42:00             ib0                 ipoib               0                   0                   0                   0
+17:42:00             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:01             ib0                 rdma                0                   0                   0                   0
+17:42:01             ib0                 ipoib               0                   0                   0                   0
+17:42:01             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:02             ib0                 rdma                0                   0                   0                   0
+17:42:02             ib0                 ipoib               0                   0                   0                   0
+17:42:02             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:03             ib0                 rdma                0                   0                   0                   0
+17:42:03             ib0                 ipoib               0                   0                   0                   0
+17:42:03             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:05             ib0                 rdma                0                   0                   0                   0
+17:42:05             ib0                 ipoib               0                   0                   0                   0
+17:42:05             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:06             ib0                 rdma                0                   0                   0                   0
+17:42:06             ib0                 ipoib               0                   0                   0                   0
+17:42:06             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:07             ib0                 rdma                0                   0                   0                   0
+17:42:07             ib0                 ipoib               0                   0                   0                   0
+17:42:07             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:08             ib0                 rdma                0                   0                   0                   0
+17:42:08             ib0                 ipoib               0                   0                   0                   0
+17:42:08             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:09             ib0                 rdma                0                   0                   0                   0
+17:42:09             ib0                 ipoib               0                   0                   0                   0
+17:42:09             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:10             ib0                 rdma                0                   0                   0                   0
+17:42:10             ib0                 ipoib               0                   0                   0                   0
+17:42:10             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:11             ib0                 rdma                0                   0                   0                   0
+17:42:11             ib0                 ipoib               0                   0                   0                   0
+17:42:11             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:12             ib0                 rdma                0                   0                   0                   0
+17:42:12             ib0                 ipoib               0                   0                   0                   0
+17:42:12             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:14             ib0                 rdma                0                   0                   0                   0
+17:42:14             ib0                 ipoib               0                   0                   0                   0
+17:42:14             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:15             ib0                 rdma                0                   0                   0                   0
+17:42:15             ib0                 ipoib               0                   0                   0                   0
+17:42:15             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:16             ib0                 rdma                0                   0                   0                   0
+17:42:16             ib0                 ipoib               0                   0                   0                   0
+17:42:16             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:17             ib0                 rdma                0                   0                   0                   0
+17:42:17             ib0                 ipoib               0                   0                   0                   0
+17:42:17             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:18             ib0                 rdma                0                   0                   0                   0
+17:42:18             ib0                 ipoib               0                   0                   0                   0
+17:42:18             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:19             ib0                 rdma                0                   0                   0                   0
+17:42:19             ib0                 ipoib               0                   0                   0                   0
+17:42:19             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:20             ib0                 rdma                0                   0                   0                   0
+17:42:20             ib0                 ipoib               0                   0                   0                   0
+17:42:20             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:22             ib0                 rdma                0                   0                   0                   0
+17:42:22             ib0                 ipoib               0                   0                   0                   0
+17:42:22             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:23             ib0                 rdma                0                   0                   0                   0
+17:42:23             ib0                 ipoib               0                   0                   0                   0
+17:42:23             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:24             ib0                 rdma                0                   0                   0                   0
+17:42:24             ib0                 ipoib               0                   0                   0                   0
+17:42:24             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:25             ib0                 rdma                0                   0                   0                   0
+17:42:25             ib0                 ipoib               0                   0                   0                   0
+17:42:25             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:26             ib0                 rdma                0                   0                   0                   0
+17:42:26             ib0                 ipoib               0                   0                   0                   0
+17:42:26             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:27             ib0                 rdma                0                   0                   0                   0
+17:42:27             ib0                 ipoib               0                   0                   0                   0
+17:42:27             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:28             ib0                 rdma                0                   0                   0                   0
+17:42:28             ib0                 ipoib               0                   0                   0                   0
+17:42:28             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:29             ib0                 rdma                0                   0                   0                   0
+17:42:29             ib0                 ipoib               0                   0                   0                   0
+17:42:29             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:31             ib0                 rdma                0                   0                   0                   0
+17:42:31             ib0                 ipoib               0                   0                   0                   0
+17:42:31             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:32             ib0                 rdma                0                   0                   0                   0
+17:42:32             ib0                 ipoib               0                   0                   0                   0
+17:42:32             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:33             ib0                 rdma                0                   0                   0                   0
+17:42:33             ib0                 ipoib               0                   0                   0                   0
+17:42:33             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:34             ib0                 rdma                0                   0                   0                   0
+17:42:34             ib0                 ipoib               0                   0                   0                   0
+17:42:34             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:35             ib0                 rdma                0                   0                   0                   0
+17:42:35             ib0                 ipoib               0                   0                   0                   0
+17:42:35             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:36             ib0                 rdma                0                   0                   0                   0
+17:42:36             ib0                 ipoib               0                   0                   0                   0
+17:42:36             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:37             ib0                 rdma                0                   0                   0                   0
+17:42:37             ib0                 ipoib               0                   0                   0                   0
+17:42:37             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:39             ib0                 rdma                0                   0                   0                   0
+17:42:39             ib0                 ipoib               0                   0                   0                   0
+17:42:39             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:40             ib0                 rdma                0                   0                   0                   0
+17:42:40             ib0                 ipoib               0                   0                   0                   0
+17:42:40             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:41             ib0                 rdma                0                   0                   0                   0
+17:42:41             ib0                 ipoib               0                   0                   0                   0
+17:42:41             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:42             ib0                 rdma                0                   0                   0                   0
+17:42:42             ib0                 ipoib               0                   0                   0                   0
+17:42:42             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:43             ib0                 rdma                0                   0                   0                   0
+17:42:43             ib0                 ipoib               0                   0                   0                   0
+17:42:43             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:44             ib0                 rdma                0                   0                   0                   0
+17:42:44             ib0                 ipoib               0                   0                   0                   0
+17:42:44             ib0                 all                 0                   0                   0                   0 
+
+ib0
+17:42:45             ib0                 rdma                0                   0                   0                   0
+17:42:45             ib0                 ipoib               0                   0                   0                   0
+17:42:45             ib0                 all                 0                   0                   0                   0 
+
+ib0
