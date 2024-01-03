@@ -51,7 +51,7 @@ netprobif="/usr/sbin/ifconfig"
 
 check_dev_validity() {
    dev=$1
-   if [ -d '${netprobif}' ]
+   if [ -X "${netprobif}" ]
    then
      ${netprobif} $dev &> /dev/null
    else 
